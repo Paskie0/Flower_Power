@@ -5,4 +5,9 @@ module.exports = {
   daisyui: {
     themes: ["retro", "dark"],
   },
+  theme: {
+    fontFamily: {
+      logo: ['"Pacifico"', "cursive"],
+    },
+  },
 };
