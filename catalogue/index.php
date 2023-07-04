@@ -28,7 +28,7 @@
                     </li>
                 </ul>
             </div>
-            <a href="index.php" class="btn btn-ghost normal-case text-xl no-animation font-logo">Flower Power</a>
+            <a href="../index.php" class="btn btn-ghost normal-case text-xl no-animation font-logo">Flower Power</a>
             <label class="btn btn-ghost btn-square swap swap-rotate hidden md:inline-grid">
                 <input type="checkbox" id="theme-switcher" />
                 <i class="swap-off fa-solid fa-sun fa-xl"></i>
@@ -49,14 +49,50 @@
             </ul>
         </div>
         <div class="navbar-end">
-            <a href="contact.php" role="button" class="btn btn-ghost flex flex-col">
+            <a href="../contact.php" role="button" class="btn btn-ghost flex flex-col">
                 <i class="fa-solid fa-address-card fa-xl"></i>
                 <span class="hidden md:inline normal-case">Contact</span>
             </a>
-            <button class="btn btn-ghost flex flex-col">
-                <i class="fa-solid fa-user fa-xl"></i>
-                <span class="hidden md:inline normal-case">Account</span>
-            </button>
+            <div class="dropdown dropdown-end drop-shadow-lg">
+                <label tabindex="0" class="btn btn-ghost flex flex-col">
+                    <i class="fa-solid fa-user fa-xl"></i>
+                    <span class="hidden md:inline normal-case">Account</span>
+                </label>
+                <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
+                    <form action="" method="POST" tabindex="0" id="login">
+                        <label for="email" class="font-semibold py-1">Email:</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required class="input input-bordered w-full">
+
+                        <label for="password" class="font-semibold py-1">Password:</label>
+                        <input type="password" id="password" name="password" autocomplete="current-password" required class="input input-bordered w-full">
+
+                        <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Login</button>
+                    </form>
+                    <form action="" method="POST" tabindex="0" id="register" class="hidden">
+                        <label for="email" class="font-semibold py-4">Email:</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required class="input input-bordered w-full">
+
+                        <label for="password" class="font-semibold py-4">Wachtwoord:</label>
+                        <input type="password" id="password" name="password" autocomplete="new-password" required class="input input-bordered w-full">
+
+                        <label for="first-name" class="font-semibold py-4">Voornaam:</label>
+                        <input type="text" id="first-name" name="first-name" autocomplete="given-name" required class="input input-bordered w-full">
+
+                        <label for="infix" class="font-semibold py-4">Tussenvoegsel:</label>
+                        <input type="text" id="infix" name="infix" autocomplete="additional-name" class="input input-bordered w-full">
+
+                        <label for="last-name" class="font-semibold py-4">Achternaam:</label>
+                        <input type="text" id="last-name" name="last-name" autocomplete="family-name" required class="input input-bordered w-full">
+
+                        <label for="date-of-birth" class="font-semibold py-4">Geboortedatum:</label>
+                        <input type="date" id="date-of-birth" name="date-of-birth" autocomplete="bday" required class="input input-bordered w-full">
+
+
+                        <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Registreren</button>
+                    </form>
+                    <button onclick="toggleForms()" id="toggleFormsButton" type="button" class="btn btn-wide btn-sm mt-2 no-animation">Registreren</button>
+                </div>
+            </div>
             <button class="btn btn-ghost flex flex-col">
                 <i class="fa-solid fa-cart-shopping fa-xl"></i>
                 <span class="hidden md:inline normal-case">Cart</span>
