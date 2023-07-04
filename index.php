@@ -1,6 +1,3 @@
-<?php
-include_once 'functions\connect.php'
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,8 +41,8 @@ include_once 'functions\connect.php'
                     <details>
                         <summary>Collecties</summary>
                         <ul class="p-2">
-                            <li><a>Bloemen</a></li>
-                            <li><a>Boeketten</a></li>
+                            <li><a href="catalogue/index.php">Bloemen</a></li>
+                            <li><a href="catalogue/index.php">Boeketten</a></li>
                         </ul>
                     </details>
                 </li>
@@ -109,7 +106,7 @@ include_once 'functions\connect.php'
                 <h1 class="mb-5 text-5xl font-bold">Welkom bij,</h1>
                 <h1 class="mb-5 text-5xl text-green-200 font-bold font-logo">Flower Power</h1>
                 <p class="mb-5 text-lg">Ontdek onze adembenemende selectie van bloemen voor elke gelegenheid en laat je betoveren door hun kleuren en geuren.</p>
-                <a href="#" role="button" class="btn btn-primary">Shop Nu</a>
+                <a href="catalogue/index.php" role="button" class="btn btn-primary">Shop Nu</a>
             </div>
         </div>
     </div>

@@ -41,8 +41,8 @@
                     <details>
                         <summary>Collecties</summary>
                         <ul class="p-2">
-                            <li><a>Bloemen</a></li>
-                            <li><a>Boeketten</a></li>
+                            <li><a href="catalogue/index.php">Bloemen</a></li>
+                            <li><a href="catalogue/index.php">Boeketten</a></li>
                         </ul>
                     </details>
                 </li>
