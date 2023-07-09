@@ -11,9 +11,7 @@ $dateOfBirth = $_POST['date-of-birth'];
 $sql = "INSERT INTO `klanten` (`klant_email`, `klant_wachtwoord`, `klant_voornaam`, `klant_tussenvoegsel`, `klant_achternaam`, `klant_geboortedatum`) VALUES ('$email', '$password', '$firstName', '$infix', '$lastName', '$dateOfBirth')";
 
 if ($conn->query($sql) === true) {
-    echo "New records created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "New User Registerd!";
 }
 
 $conn->close();
