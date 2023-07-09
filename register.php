@@ -15,3 +15,5 @@ if ($conn->query($sql) === true) {
 }
 
 $conn->close();
+header("Location: index.php");
+exit();
