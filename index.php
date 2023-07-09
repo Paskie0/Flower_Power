@@ -68,7 +68,7 @@
 
                         <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Login</button>
                     </form>
-                    <form action="register.php" method="post" tabindex="0" id="register">
+                    <form action="register.php" method="post" tabindex="0" id="register" target="hiddenFrame" class="hidden">
                         <label for="email-register" class="font-semibold py-4">Email:</label>
                         <input type="email" id="email-register" name="email-register" autocomplete="email" required class="input input-bordered w-full">
 
@@ -87,7 +87,7 @@
                         <label for="date-of-birth" class="font-semibold py-4">Date of Birth:</label>
                         <input type="date" id="date-of-birth" name="date-of-birth" autocomplete="bday" required class="input input-bordered w-full">
 
-                        <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Log In</button>
+                        <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Registreren</button>
                     </form>
                     <button onclick="toggleForms()" id="toggleFormsButton" type="button" class="btn btn-wide btn-sm mt-2 no-animation">Registreren</button>
                 </div>
@@ -179,6 +179,8 @@
             <a><i class="fa-brands fa-instagram fa-xl"></i></a>
         </div>
     </footer>
+    <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

@@ -10,3 +10,7 @@ function toggleForms() {
     document.querySelector("#toggleFormsButton").innerHTML = "Login";
   else document.querySelector("#toggleFormsButton").innerHTML = "Registreren";
 }
+
+function refreshPage() {
+  window.location.reload();
+}
