@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "u597563256_Pascal";
-$password = "3Lf6aR3s!";
-$dbname = "u597563256_Flower_Power";
+$username = "root";
+$password = "";
+$dbname = "Flower_Power";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
