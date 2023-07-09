@@ -59,7 +59,7 @@
                     <span class="hidden md:inline normal-case">Account</span>
                 </label>
                 <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
-                    <form action="./login.php" method="post" tabindex="0" id="login" autocomplete="off">
+                    <form action="login.php" method="post" tabindex="0" id="login" autocomplete="off">
                         <label for="email" class="font-semibold py-1">Email:</label>
                         <input type="email" id="email-login" name="email-login" autocomplete="email" required class="input input-bordered w-full">
 
@@ -68,7 +68,7 @@
 
                         <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Login</button>
                     </form>
-                    <form action="./register.php" method="post" tabindex="0" id="register" class="hidden">
+                    <form action="register.php" method="post" tabindex="0" id="register" class="hidden">
                         <label for="email-register" class="font-semibold py-4">Email:</label>
                         <input type="email" id="email-register" name="email-register" autocomplete="email" required class="input input-bordered w-full">
 
