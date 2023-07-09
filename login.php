@@ -17,9 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: account.php");
         exit();
     } else {
-        echo "Foutief wachtwoord of emailadres";
-    }
+        $message = "Fout wachtwoord of emailadres";
 
-    // Close the database connection
+        echo '<script type="text/javascript">';
+        echo 'alert("' . $message . '");';
+        echo '</script>';
+    }
     $conn->close();
 }
