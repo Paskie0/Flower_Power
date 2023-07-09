@@ -1,5 +1,5 @@
 <?php
-include_once 'connect.php';
+include_once './connect.php';
 
 $email = $_POST['email-register'];
 $password = $_POST['password-register'];
