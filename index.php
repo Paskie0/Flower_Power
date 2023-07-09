@@ -59,36 +59,35 @@
                     <span class="hidden md:inline normal-case">Account</span>
                 </label>
                 <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
-                    <form action="" method="POST" tabindex="0" id="login">
+                    <form action="login.php" method="post" tabindex="0" id="login" autocomplete="off">
                         <label for="email" class="font-semibold py-1">Email:</label>
-                        <input type="email" id="email" name="email" autocomplete="email" required class="input input-bordered w-full">
+                        <input type="email" id="email-login" name="email-login" autocomplete="email" required class="input input-bordered w-full">
 
                         <label for="password" class="font-semibold py-1">Password:</label>
-                        <input type="password" id="password" name="password" autocomplete="current-password" required class="input input-bordered w-full">
+                        <input type="password" id="password-login" name="password-login" autocomplete="current-password" required class="input input-bordered w-full">
 
                         <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Login</button>
                     </form>
-                    <form action="" method="POST" tabindex="0" id="register" class="hidden">
-                        <label for="email" class="font-semibold py-4">Email:</label>
-                        <input type="email" id="email" name="email" autocomplete="email" required class="input input-bordered w-full">
+                    <form action="register.php" method="post" tabindex="0" id="register">
+                        <label for="email-register" class="font-semibold py-4">Email:</label>
+                        <input type="email" id="email-register" name="email-register" autocomplete="email" required class="input input-bordered w-full">
 
-                        <label for="password" class="font-semibold py-4">Wachtwoord:</label>
-                        <input type="password" id="password" name="password" autocomplete="new-password" required class="input input-bordered w-full">
+                        <label for="password-register" class="font-semibold py-4">Password:</label>
+                        <input type="password" id="password-register" name="password-register" autocomplete="new-password" required class="input input-bordered w-full">
 
-                        <label for="first-name" class="font-semibold py-4">Voornaam:</label>
+                        <label for="first-name" class="font-semibold py-4">First Name:</label>
                         <input type="text" id="first-name" name="first-name" autocomplete="given-name" required class="input input-bordered w-full">
 
-                        <label for="infix" class="font-semibold py-4">Tussenvoegsel:</label>
+                        <label for="infix" class="font-semibold py-4">Infix:</label>
                         <input type="text" id="infix" name="infix" autocomplete="additional-name" class="input input-bordered w-full">
 
-                        <label for="last-name" class="font-semibold py-4">Achternaam:</label>
+                        <label for="last-name" class="font-semibold py-4">Last Name:</label>
                         <input type="text" id="last-name" name="last-name" autocomplete="family-name" required class="input input-bordered w-full">
 
-                        <label for="date-of-birth" class="font-semibold py-4">Geboortedatum:</label>
+                        <label for="date-of-birth" class="font-semibold py-4">Date of Birth:</label>
                         <input type="date" id="date-of-birth" name="date-of-birth" autocomplete="bday" required class="input input-bordered w-full">
 
-
-                        <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Registreren</button>
+                        <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Log In</button>
                     </form>
                     <button onclick="toggleForms()" id="toggleFormsButton" type="button" class="btn btn-wide btn-sm mt-2 no-animation">Registreren</button>
                 </div>
@@ -180,7 +179,6 @@
             <a><i class="fa-brands fa-instagram fa-xl"></i></a>
         </div>
     </footer>
-    <script src="./js/script.js"></script>
 </body>
 
 </html>
