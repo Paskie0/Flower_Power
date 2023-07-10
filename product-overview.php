@@ -123,9 +123,9 @@ include_once 'connect.php';
             </button>
         </div>
     </div>
-    <div class="flex items-center justify-between">
-        <h1 class="pt-4 text-4xl font-bold text-center">Product overzicht</h1>
-        <div class="dropdown dropdown-end drop-shadow-lg">
+    <div class="flex items-center justify-center">
+        <h1 class="pt-4 text-4xl font-bold">Product overzicht</h1>
+        <div class="dropdown dropdown-end drop-shadow-lg ml-4">
             <label tabindex="0" class="btn btn-ghost flex flex-col">
                 <i class="fa-solid fa-plus fa-xl"></i>
                 <span class="hidden md:inline normal-case">Product toevoegen</span>
