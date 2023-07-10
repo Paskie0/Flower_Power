@@ -34,6 +34,18 @@ $updateQuery = "UPDATE klanten SET klant_straatnaam = '$klant_straatnaam',
                 WHERE klant_id = '$userId'";
 mysqli_query($conn, $updateQuery);
 
+// Calculate the total order amount
+$totalAmount = 0;
+while ($row = mysqli_fetch_assoc($result)) {
+    $productPrice = $row['artikel_prijs'];
+    $quantity = 1;
+    $totalAmount += $productPrice * $quantity;
+}
+
+// Insert a new entry into the 'bestellingen' table
+$insertQuery = "INSERT INTO bestellingen (klant_id, bestelling_datum, bestelling_totaal)
+                VALUES ('$userId', NOW(), '$totalAmount')";
+mysqli_query($conn, $insertQuery);
 // Close the database connection
 mysqli_close($conn);
 header('Location: complete.php');
