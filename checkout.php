@@ -156,7 +156,7 @@ include_once 'checkout-logic.php';
         <label for="klant_telefoon" class="font-semibold py-1">Telefoon:</label>
         <input type="text" id="klant_telefoon" name="klant_telefoon" required class="input input-bordered w-full">
 
-        <button type="submit">Bestelling afronden</button>
+        <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Bestelling afronden</button>
     </form>
     <footer class="footer items-center p-4 bg-neutral text-neutral-content">
         <div class="items-center grid-flow-col">

@@ -36,3 +36,5 @@ mysqli_query($conn, $updateQuery);
 
 // Close the database connection
 mysqli_close($conn);
+header('Location: complete.php');
+exit;
