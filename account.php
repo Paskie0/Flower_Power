@@ -2,6 +2,9 @@
 session_start();
 $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
 ?>
+<?php
+include_once 'account-info.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +12,7 @@ $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Flower Power</title>
     <link rel="stylesheet" href="css/output.css">
     <script src="https://kit.fontawesome.com/d437031e9c.js" crossorigin="anonymous"></script>
 </head>
@@ -111,35 +114,111 @@ $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
         </div>
     </div>
     <h1 class="pt-4 text-4xl font-bold text-center">Contact informatie</h1>
-    <div class="divider"></div>
-    <div class="hero min-h-[30%]">
-        <div class="hero-content flex-col sm:flex-row">
-            <img src="./img/flower7.jpg" class="object-cover max-h-[30rem] w-full sm:w-64 rounded-lg shadow-2xl" />
-            <div>
-                <h1 class="text-4xl font-bold">Filiaal Almere</h1>
-                <h3 class="text-xl font-semibold py-2">Adres</h3>
-                <p>Straat van Florida 1</p>
-                <h3 class="text-xl font-semibold py-2">Telefoon nr.</h3>
-                <a href="tel:+31(030)539-87-65">(030) 539 87 65</a>
-                <h3 class="text-xl font-semibold py-2">E-mailadres</h3>
-                <a href="mailto:Almere@flowerpower.nl" class="link">Almere@flowerpower.nl</a>
-            </div>
-        </div>
-    </div>
-    <div class="hero min-h-[30%]">
-        <div class="hero-content flex-col sm:flex-row">
-            <img src="./img/flower8.jpg" class="object-cover max-h-[30rem] w-full sm:w-64 rounded-lg shadow-2xl" />
-            <div>
-                <h1 class="text-4xl font-bold">Filiaal Utrecht</h1>
-                <h3 class="text-xl font-semibold py-2">Adres</h3>
-                <p>Rotterdamseweg 12</p>
-                <h3 class="text-xl font-semibold py-2">Telefoon nr.</h3>
-                <a href="tel:+31(030)539-87-65">(030) 539 87 65</a>
-                <h3 class="text-xl font-semibold py-2">E-mailadres</h3>
-                <a href="mailto:Utrecht@flowerpower.nl" class="link">Utrecht@flowerpower.nl</a>
-            </div>
-        </div>
-    </div>
+    <main class="p-6">
+        <h1 class="text-2xl font-bold mb-4">Account Information</h1>
+        <ul class="space-y-4">
+            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex-grow">
+                        <h2 class="text-lg font-semibold">Email</h2>
+                        <p class="text-gray-500">' . $email . '</p>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+                </div>
+            </li>';
+            ?>
+            <li class="bg-transparent rounded-lg shadow-md p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex-grow">
+                        <h2 class="text-lg font-semibold">Voornaam</h2>
+                        <p class="text-gray-500">Pascal</p>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+                </div>
+            </li>
+            <li class="bg-transparent rounded-lg shadow-md p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex-grow">
+                        <h2 class="text-lg font-semibold">Tussenvoegsel</h2>
+                        <p class="text-gray-500"></p>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+                </div>
+            </li>
+            <li class="bg-transparent rounded-lg shadow-md p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex-grow">
+                        <h2 class="text-lg font-semibold">Achternaam</h2>
+                        <p class="text-gray-500">de Wit</p>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+                </div>
+            </li>
+            <li class="bg-transparent rounded-lg shadow-md p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex-grow">
+                        <h2 class="text-lg font-semibold">Wachtwoord</h2>
+                        <p class="text-gray-500">********</p>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+                </div>
+            </li>
+            <li class="bg-transparent rounded-lg shadow-md p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex-grow">
+                        <h2 class="text-lg font-semibold">Geboortedatum</h2>
+                        <p class="text-gray-500">02-07-2002</p>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+                </div>
+            </li>
+            <li class="bg-transparent rounded-lg shadow-md p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex-grow">
+                        <h2 class="text-lg font-semibold">Straatnaam</h2>
+                        <p class="text-gray-500">02-07-2002</p>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+                </div>
+            </li>
+            <li class="bg-transparent rounded-lg shadow-md p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex-grow">
+                        <h2 class="text-lg font-semibold">Huisnummer</h2>
+                        <p class="text-gray-500">02-07-2002</p>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+                </div>
+            </li>
+            <li class="bg-transparent rounded-lg shadow-md p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex-grow">
+                        <h2 class="text-lg font-semibold">Postcode</h2>
+                        <p class="text-gray-500">02-07-2002</p>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+                </div>
+            </li>
+            <li class="bg-transparent rounded-lg shadow-md p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex-grow">
+                        <h2 class="text-lg font-semibold">Plaats</h2>
+                        <p class="text-gray-500">Almere</p>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+                </div>
+            </li>
+            <li class="bg-transparent rounded-lg shadow-md p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex-grow">
+                        <h2 class="text-lg font-semibold">Telefoon</h2>
+                        <p class="text-gray-500"></p>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+                </div>
+            </li>
+        </ul>
+    </main>
     <footer class="footer items-center p-4 bg-neutral text-neutral-content">
         <div class="items-center grid-flow-col">
             <p>@ 2023 Flower Power - All right reserved</p>
