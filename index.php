@@ -56,7 +56,11 @@
             <div class="dropdown dropdown-end drop-shadow-lg">
                 <label tabindex="0" class="btn btn-ghost flex flex-col">
                     <i class="fa-solid fa-user fa-xl"></i>
-                    <span class="hidden md:inline normal-case">Account</span>
+                    <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) { ?>
+                        <span class="hidden md:inline normal-case">Welkom <?php echo $_SESSION['username']; ?></span>
+                    <?php } else { ?>
+                        <span class="hidden md:inline normal-case">Account</span>
+                    <?php } ?>
                 </label>
                 <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
                     <form action="login.php" method="post" tabindex="0" id="login" autocomplete="off">
