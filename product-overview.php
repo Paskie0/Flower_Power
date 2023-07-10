@@ -140,12 +140,13 @@ include_once 'connect.php';
             $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
             foreach ($products as $product) {
+                $productId = $product['artikel_id'];
                 $productNaam = $product['artikel_naam'];
                 $productPrijs = $product['artikel_prijs'];
                 $productBeschrijving = $product['artikel_beschrijving'];
         ?>
 
-                <a href="#" class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all">
+                <a href="<?php echo $productId ?>" class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all">
                     <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
                     <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
                     <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
