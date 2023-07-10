@@ -2,6 +2,7 @@
 session_start();
 $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
 $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMedewerker'] === true;
+include_once 'connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -124,108 +125,6 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
     </div>
     <h1 class="pt-4 text-4xl font-bold text-center">Producten</h1>
     <div class="divider"></div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-        <?php
-        // Assuming you have already established a database connection
-
-        // Query to retrieve products from the database
-        $query = "SELECT * FROM artikelen";
-
-        // Execute the query
-        $result = mysqli_query($conn, $query);
-
-        // Check if the query was successful
-        if ($result && mysqli_num_rows($result) > 0) {
-            $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-            foreach ($products as $product) {
-                $productId = $product['artikel_id'];
-                $productNaam = $product['artikel_naam'];
-                $productPrijs = $product['artikel_prijs'];
-                $productBeschrijving = $product['artikel_beschrijving'];
-        ?>
-                <div class="product-item">
-                    <div class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all cursor-pointer">
-                        <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
-                        <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
-                        <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
-                    </div>
-                    <div class="buttons">
-                        <button class="edit-button" data-product-id="<?php echo $productId; ?>">Edit</button>
-                        <button class="save-button hidden" data-product-id="<?php echo $productId; ?>">Save</button>
-                        <button class="delete-button" data-product-id="<?php echo $productId; ?>">Delete</button>
-                    </div>
-                </div>
-        <?php
-            }
-        } else {
-            // No products found in the database
-            echo '<p>No products found.</p>';
-        }
-
-        // Free the result set
-        mysqli_free_result($result);
-
-        // Close the database connection
-        mysqli_close($conn);
-        ?>
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                // Edit button click event
-                $('.edit-button').on('click', function() {
-                    var productId = $(this).data('product-id');
-                    var productContainer = $(this).closest('.product-item');
-
-                    // Toggle edit and save buttons visibility
-                    $(this).addClass('hidden');
-                    productContainer.find('.save-button').removeClass('hidden');
-
-                    // Enable editing of product details
-                    productContainer.find('h2, p').attr('contenteditable', 'true');
-                });
-
-                // Save button click event
-                $('.save-button').on('click', function() {
-                    var productId = $(this).data('product-id');
-                    var productContainer = $(this).closest('.product-item');
-
-                    // Disable editing of product details
-                    productContainer.find('h2, p').attr('contenteditable', 'false');
-
-                    // Retrieve updated product details
-                    var productName = productContainer.find('h2').text();
-                    var productPrice = productContainer.find('p:eq(0)').text().replace('Price: $', '');
-                    var productDescription = productContainer.find('p:eq(1)').text();
-
-                    // Send AJAX request to update product details on the server
-                    $.ajax({
-                        method: 'POST',
-                        url: 'update-product.php',
-                        data: {
-                            productId: productId,
-                            productName: productName,
-                            productPrice: productPrice,
-                            productDescription: productDescription
-                        },
-                        success: function(response) {
-                            // Handle success response, if needed
-                            console.log('Product details updated successfully.');
-                        },
-                        error: function(xhr, status, error) {
-                            // Handle error response, if needed
-                            console.log('Error updating product details:', error);
-                        }
-                    });
-
-                    // Toggle save and edit buttons visibility
-                    $(this).addClass('hidden');
-                    productContainer.find('.edit-button').removeClass('hidden');
-                });
-            });
-        </script>
-    </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
         <?php
         // Assuming you have already established a database connection
