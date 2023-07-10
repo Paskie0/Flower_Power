@@ -119,7 +119,7 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
             <a href="cart.php" role="button" class="btn btn-ghost flex flex-col">
                 <i class="fa-solid fa-cart-shopping fa-xl"></i>
                 <span class="hidden md:inline normal-case">Cart</span>
-                </button>
+            </a>
         </div>
     </div>
     <div class="hero min-h-screen" style="background-image: url(./img/bouquet-showcase.jpg);">
