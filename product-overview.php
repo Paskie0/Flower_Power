@@ -146,11 +146,17 @@ include_once 'connect.php';
                 $productBeschrijving = $product['artikel_beschrijving'];
         ?>
 
-                <a href="<?php echo "product-overview/" . $productId ?>" class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all">
-                    <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
-                    <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
-                    <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
-                </a>
+                <div class="product-item">
+                    <a href="<?php echo "product-overview/" . $productId ?>" class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all">
+                        <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
+                        <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
+                        <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
+                    </a>
+                    <div class="buttons">
+                        <button class="edit-button">Edit</button>
+                        <button class="save-button">Save</button>
+                    </div>
+                </div>
 
         <?php
             }
