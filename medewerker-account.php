@@ -3,6 +3,9 @@ session_start();
 $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
 $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMedewerker'] === true;
 ?>
+<?php
+include_once 'account-info.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +16,61 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
     <title>Flower Power</title>
     <link rel="stylesheet" href="css/output.css">
     <script src="https://kit.fontawesome.com/d437031e9c.js" crossorigin="anonymous"></script>
+    <!-- Include the jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- JavaScript code -->
+    <script>
+        $(document).ready(function() {
+            $('.edit-btn').click(function() {
+                // Get the parent <li> element
+                var listItem = $(this).closest('li');
+
+                // Hide the edit button and show the save button
+                listItem.find('.edit-btn').hide();
+                listItem.find('.save-btn').show();
+
+                // Enable editing of the text content
+                listItem.find('p').prop('contenteditable', true).addClass('border border-gray-300');
+
+                // Set focus on the editable element
+                listItem.find('p').focus();
+            });
+
+            $('.save-btn').click(function() {
+                // Get the parent <li> element
+                var listItem = $(this).closest('li');
+
+                // Hide the save button and show the edit button
+                listItem.find('.save-btn').hide();
+                listItem.find('.edit-btn').show();
+
+                // Disable editing of the text content
+                listItem.find('p').prop('contenteditable', false).removeClass('border border-gray-300');
+
+                // Get the updated text content
+                var updatedContent = listItem.find('p').text().trim();
+
+                // Perform an AJAX request to save the updated content to the database
+                // Modify this code to fit your specific database and server-side logic
+                $.ajax({
+                    url: 'update-klanten.php', // Replace with your PHP file to handle the update
+                    method: 'POST',
+                    data: {
+                        field: listItem.find('h2').text().trim(), // Specify the field being updated
+                        value: updatedContent, // Pass the updated content
+                    },
+                    success: function(response) {
+                        // Handle the success response if needed
+                        console.log('Data updated successfully!');
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle the error response if needed
+                        console.error('Error updating data:', error);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -28,8 +86,8 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
                     <li>
                         <a>Collecties</a>
                         <ul class="p-2">
-                            <li><a href="catalogue/index.php">Bloemen</a></li>
-                            <li><a href="catalogue/index.php">Boeketten</a></li>
+                            <li><a>Bloemen</a></li>
+                            <li><a>Boeketten</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -65,9 +123,8 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
                     <span class="hidden md:inline normal-case">Account</span>
                 </label>
                 <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
-                    <?php if ($isLoggedIn || $isMedewerker) : ?>
+                    <?php if ($isLoggedIn) : ?>
                         <a href="account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Account</a>
-                        <a href="medewerker-account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Account</a>
                         <form action="logout.php" method="post">
                             <button type="submit" class="btn btn-wide btn-sm mt-2 no-animation">Uitloggen</button>
                         </form>
@@ -102,17 +159,7 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
 
                             <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Registreren</button>
                         </form>
-                        <form action="medewerker-login.php" method="post" tabindex="0" id="medewerker-login" autocomplete="off" class="hidden">
-                            <label for="email" class="font-semibold py-1">Email:</label>
-                            <input type="email" id="medewerker-email" name="medewerker-email" autocomplete="email" required class="input input-bordered w-full">
-
-                            <label for="password" class="font-semibold py-1">Password:</label>
-                            <input type="password" id="medewerker-password" name="medewerker-password" autocomplete="current-password" required class="input input-bordered w-full">
-
-                            <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Login</button>
-                        </form>
                         <button onclick="toggleForms()" id="toggleFormsButton" type="button" class="btn btn-wide btn-sm mt-2 no-animation">Registreren</button>
-                        <button onclick="medewerkerForm()" id="medewerkerFormButton" type="button" class="btn btn-wide btn-sm mt-2 no-animation">Medewerker</button>
                     <?php endif; ?>
                 </div>
             </div>
@@ -122,77 +169,67 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
             </button>
         </div>
     </div>
-    <div class="hero min-h-screen" style="background-image: url(./img/bouquet-showcase.jpg);">
-        <div class="hero-overlay bg-opacity-60"></div>
-        <div class="hero-content text-center text-white">
-            <div class="max-w-md">
-                <h1 class="mb-5 text-5xl font-bold">Welkom bij,</h1>
-                <h1 class="mb-5 text-5xl text-green-200 font-bold font-logo">Flower Power</h1>
-                <p class="mb-5 text-lg">Ontdek onze adembenemende selectie van bloemen voor elke gelegenheid en laat je betoveren door hun kleuren en geuren.</p>
-                <a href="catalogue/index.php" role="button" class="btn btn-primary">Shop Nu</a>
-            </div>
-        </div>
-    </div>
-    <h2 class="p-4 text-2xl">Onze Bestsellers</h2>
-    <div class="carousel carousel-center max-w-full p-4 space-x-4">
-        <div class="carousel-item flex-col w-40">
-            <img src="./img/flower1.webp" class="rounded-box" />
-            <h3 class="font-semibold text-lg">Flower</h3>
-            <p>€19,95</p>
-        </div>
-        <div class="carousel-item flex-col w-40">
-            <img src="./img/flower1.webp" class="rounded-box" />
-            <h3 class="font-semibold text-lg">Flower</h3>
-            <p>€19,95</p>
-        </div>
-        <div class="carousel-item flex-col w-40">
-            <img src="./img/flower1.webp" class="rounded-box" />
-            <h3 class="font-semibold text-lg">Flower</h3>
-            <p>€19,95</p>
-        </div>
-        <div class="carousel-item flex-col w-40">
-            <img src="./img/flower1.webp" class="rounded-box" />
-            <h3 class="font-semibold text-lg">Flower</h3>
-            <p>€19,95</p>
-        </div>
-        <div class="carousel-item flex-col w-40">
-            <img src="./img/flower1.webp" class="rounded-box" />
-            <h3 class="font-semibold text-lg">Flower</h3>
-            <p>€19,95</p>
-        </div>
-        <div class="carousel-item flex-col w-40">
-            <img src="./img/flower1.webp" class="rounded-box" />
-            <h3 class="font-semibold text-lg">Flower</h3>
-            <p>€19,95</p>
-        </div>
-        <div class="carousel-item flex-col w-40">
-            <img src="./img/flower1.webp" class="rounded-box" />
-            <h3 class="font-semibold text-lg">Flower</h3>
-            <p>€19,95</p>
-        </div>
-    </div>
-    <h3 class="py-4 pl-4 text-xl inline">Ontdek al onze producten</h3>
-    <a href="#" role="button" class="m-4 btn btn-primary">Klik Hier</a>
-    <div class="hero min-h-[30%]">
-        <div class="hero-content flex-col sm:flex-row">
-            <img src="./img/flower5.jpg" class="object-cover max-h-[30rem] w-full sm:w-64 rounded-lg shadow-2xl" />
-            <div>
-                <h1 class="text-5xl font-bold">Over Ons</h1>
-                <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                <button class="btn btn-primary">Meer Informatie</button>
-            </div>
-        </div>
-    </div>
-    <div class="hero min-h-[30%]">
-        <div class="hero-content flex-col sm:flex-row-reverse">
-            <img src="./img/flower6.jpg" class="object-cover max-h-[30rem] w-full sm:w-64 rounded-lg shadow-2xl" />
-            <div>
-                <h1 class="text-5xl font-bold">Duurzaam</h1>
-                <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                <button class="btn btn-primary">Meer Informatie</button>
-            </div>
-        </div>
-    </div>
+    <h1 class="pt-4 text-4xl font-bold text-center">Medewerker informatie</h1>
+    <div class="divider"></div>
+    <main class="p-6">
+        <ul class="space-y-4">
+            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex-grow">
+                        <h2 class="text-lg font-semibold">Email</h2>
+                        <p class="text-gray-500">' . $email . '</p>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
+                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hidden save-btn">Save</button>                
+                    </div>
+            </li>';
+            ?>
+            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex-grow">
+                        <h2 class="text-lg font-semibold">Voornaam</h2>
+                        <p class="text-gray-500">' . $firstName . '</p>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
+                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hidden save-btn">Save</button>                
+                    </div>
+            </li>';
+            ?>
+            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex-grow">
+                        <h2 class="text-lg font-semibold">Tussenvoegsel</h2>
+                        <p class="text-gray-500">' . $infix . '</p>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
+                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hidden save-btn">Save</button>                
+                    </div>
+            </li>';
+            ?>
+            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex-grow">
+                        <h2 class="text-lg font-semibold">Achternaam</h2>
+                        <p class="text-gray-500">' . $lastName . '</p>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
+                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hidden save-btn">Save</button>                
+                    </div>
+            </li>';
+            ?>
+            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex-grow">
+                        <h2 class="text-lg font-semibold">Wachtwoord</h2>
+                        <p class="text-gray-500">' . $password . '</p>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
+                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hidden save-btn">Save</button>                
+                    </div>
+            </li>';
+            ?>
+        </ul>
+    </main>
     <footer class="footer items-center p-4 bg-neutral text-neutral-content">
         <div class="items-center grid-flow-col">
             <p>@ 2023 Flower Power - All right reserved</p>
@@ -203,7 +240,7 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
             <a><i class="fa-brands fa-instagram fa-xl"></i></a>
         </div>
     </footer>
-    <script src="./js/scripts.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
