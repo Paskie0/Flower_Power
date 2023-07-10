@@ -168,11 +168,11 @@ include_once 'connect.php';
                 $productBeschrijving = $product['artikel_beschrijving'];
         ?>
                 <div class="product-item">
-                    <a href="<?php echo "product-overview/" . $productId ?>" class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all">
+                    <div class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all">
                         <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
                         <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
                         <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
-                    </a>
+                    </div>
                     <div class="buttons">
                         <button class="edit-button" data-product-id="<?php echo $productId; ?>">Edit</button>
                         <button class="save-button hidden" data-product-id="<?php echo $productId; ?>">Save</button>
