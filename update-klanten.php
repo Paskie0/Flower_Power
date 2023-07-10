@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $field = mysqli_real_escape_string($conn, $field);
     $value = mysqli_real_escape_string($conn, $value);
 
+    session_start();
     $klant_id = $_SESSION['user_id'];
 
     // Update the data in the database based on the field and user ID
