@@ -121,17 +121,17 @@ include_once 'checkout-logic.php';
             </button>
         </div>
     </div>
-    <h1>Checkout</h1>
+    <h1 class="font-bold p-4">Bestellen:</h1>
 
-    <h2>Cart Items:</h2>
-    <ul>
+    <h2 class="p-4">Artikelen in winkelwagen:</h2>
+    <ul class="p-4">
         <?php
         // Display the cart items
         mysqli_data_seek($result, 0);
         while ($row = mysqli_fetch_assoc($result)) {
             $productName = $row['artikel_naam'];
             $productPrice = $row['artikel_prijs'];
-            $quantity = $row['quantity'];
+            $quantity = 1;
             $subtotal = $productPrice * $quantity;
         ?>
             <li><?php echo $productName; ?> - Quantity: <?php echo $quantity; ?> - Subtotal: $<?php echo $subtotal; ?></li>
