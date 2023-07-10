@@ -1,3 +1,10 @@
+<?php
+session_start(); // Start the session
+
+// Check if the user is logged in
+$isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,7 +105,7 @@
             </button>
         </div>
     </div>
-    <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) { ?>
+    <?php if ($isLoggedIn) { ?>
         <h1>Hello, World!</h1>
     <?php } ?>
     <div class="hero min-h-screen" style="background-image: url(./img/bouquet-showcase.jpg);">
