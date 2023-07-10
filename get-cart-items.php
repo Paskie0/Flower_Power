@@ -2,7 +2,7 @@
 session_start();
 $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
 $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMedewerker'] === true;
-include_once '../connect.php';
+include_once 'connect.php';
 
 // Check if the user is logged in
 if (!$isLoggedIn) {
