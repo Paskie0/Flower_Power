@@ -122,6 +122,12 @@ include_once 'get-cart-items.php';
             </button>
         </div>
     </div>
+    <h2>Cart Items:</h2>
+    <ul>
+        <?php foreach ($cartItems as $item) : ?>
+            <li><?php echo $item['artikel_naam']; ?> - $<?php echo $item['artikel_prijs']; ?></li>
+        <?php endforeach; ?>
+    </ul>
     <footer class="footer items-center p-4 bg-neutral text-neutral-content">
         <div class="items-center grid-flow-col">
             <p>@ 2023 Flower Power - All right reserved</p>
