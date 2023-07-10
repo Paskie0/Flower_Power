@@ -17,7 +17,7 @@ $userId = $_SESSION['user_id'];
 // Retrieve the cart items for the user from the database
 $query = "SELECT a.artikel_naam, a.artikel_prijs
           FROM artikelen AS a
-          INNER JOIN cart AS c ON a.artikel_id = c.product_id
+          INNER JOIN winkelwagen AS c ON a.artikel_id = c.product_id
           WHERE c.user_id = '$userId'";
 $result = mysqli_query($conn, $query);
 
