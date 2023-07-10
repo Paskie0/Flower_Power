@@ -56,11 +56,7 @@
             <div class="dropdown dropdown-end drop-shadow-lg">
                 <label tabindex="0" class="btn btn-ghost flex flex-col">
                     <i class="fa-solid fa-user fa-xl"></i>
-                    <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) { ?>
-                        <span class="hidden md:inline normal-case">Welkom <?php echo $_SESSION['username']; ?></span>
-                    <?php } else { ?>
-                        <span class="hidden md:inline normal-case">Account</span>
-                    <?php } ?>
+                    <span class="hidden md:inline normal-case">Account</span>
                 </label>
                 <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
                     <form action="login.php" method="post" tabindex="0" id="login" autocomplete="off">
@@ -102,6 +98,9 @@
             </button>
         </div>
     </div>
+    <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) { ?>
+        <h1>Hello, World!</h1>
+    <?php } ?>
     <div class="hero min-h-screen" style="background-image: url(./img/bouquet-showcase.jpg);">
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-white">
