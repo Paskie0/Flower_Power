@@ -2,7 +2,7 @@
 session_start();
 $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
 $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMedewerker'] === true;
-include_once 'connect.php';
+include_once '../connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -150,11 +150,6 @@ include_once 'connect.php';
                         <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
                         <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
                         <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
-                    </div>
-                    <div class="buttons">
-                        <button class="edit-button" data-product-id="<?php echo $productId; ?>">Edit</button>
-                        <button class="save-button hidden" data-product-id="<?php echo $productId; ?>">Save</button>
-                        <button class="delete-button" data-product-id="<?php echo $productId; ?>">Delete</button>
                     </div>
                 </div>
         <?php
