@@ -17,6 +17,11 @@ if ($result->num_rows > 0) {
     $infix = $row['klant_tussenvoegsel'];
     $lastName = $row['klant_achternaam'];
     $dateOfBirth = $row['klant_geboortedatum'];
+    $street = $row['klant_straatnaam'];
+    $houseNumber = $row['klant_huisnummer'];
+    $postcode = $row['klant_postcode'];
+    $city = $row['klant_plaats'];
+    $phone = $row['klant_telefoon'];
 }
 
 $conn->close();
