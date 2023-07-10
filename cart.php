@@ -116,10 +116,10 @@ include_once 'get-cart-items.php';
                     <?php endif; ?>
                 </div>
             </div>
-            <button class="btn btn-ghost flex flex-col">
+            <a href="cart.php" role="button" class="btn btn-ghost flex flex-col">
                 <i class="fa-solid fa-cart-shopping fa-xl"></i>
                 <span class="hidden md:inline normal-case">Cart</span>
-            </button>
+            </a>
         </div>
     </div>
     <h2 class="font-bold p-4">Winkelwagen:</h2>

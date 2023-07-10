@@ -110,14 +110,14 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <button class="btn btn-ghost flex flex-col">
+            <a href="cart.php" role="button" class="btn btn-ghost flex flex-col">
                 <i class="fa-solid fa-cart-shopping fa-xl"></i>
                 <span class="hidden md:inline normal-case">Cart</span>
-            </button>
+            </a>
         </div>
     </div>
     <h1>Order List</h1>
-    <?php include 'get_orders.php'; ?>
+    <?php include 'get-orders.php'; ?>
     <footer class="footer items-center p-4 bg-neutral text-neutral-content">
         <div class="items-center grid-flow-col">
             <p>@ 2023 Flower Power - All right reserved</p>

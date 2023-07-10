@@ -1,3 +1,9 @@
+<?php
+session_start();
+$isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
+$isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMedewerker'] === true;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -110,12 +116,13 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <button class="btn btn-ghost flex flex-col">
+            <a href="cart.php" role="button" class="btn btn-ghost flex flex-col">
                 <i class="fa-solid fa-cart-shopping fa-xl"></i>
                 <span class="hidden md:inline normal-case">Cart</span>
-            </button>
+            </a>
         </div>
     </div>
+    <h1 class="text-7xl">Bedankt voor je bestelling!</h1>
     <footer class="footer items-center p-4 bg-neutral text-neutral-content">
         <div class="items-center grid-flow-col">
             <p>@ 2023 Flower Power - All right reserved</p>

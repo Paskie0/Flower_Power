@@ -83,8 +83,8 @@ include_once 'account-info.php';
                     <li>
                         <a>Collecties</a>
                         <ul class="p-2">
-                            <li><a>Bloemen</a></li>
-                            <li><a>Boeketten</a></li>
+                            <li><a href="catalogue/index.php">Bloemen</a></li>
+                            <li><a href="catalogue/index.php">Boeketten</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -120,8 +120,9 @@ include_once 'account-info.php';
                     <span class="hidden md:inline normal-case">Account</span>
                 </label>
                 <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
-                    <?php if ($isLoggedIn) : ?>
+                    <?php if ($isLoggedIn || $isMedewerker) : ?>
                         <a href="account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Account</a>
+                        <a href="medewerker-account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Medewerker</a>
                         <form action="logout.php" method="post">
                             <button type="submit" class="btn btn-wide btn-sm mt-2 no-animation">Uitloggen</button>
                         </form>
@@ -156,14 +157,24 @@ include_once 'account-info.php';
 
                             <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Registreren</button>
                         </form>
+                        <form action="medewerker-login.php" method="post" tabindex="0" id="medewerker-login" autocomplete="off" class="hidden">
+                            <label for="email" class="font-semibold py-1">Email:</label>
+                            <input type="email" id="medewerker-email" name="medewerker-email" autocomplete="email" required class="input input-bordered w-full">
+
+                            <label for="password" class="font-semibold py-1">Password:</label>
+                            <input type="password" id="medewerker-password" name="medewerker-password" autocomplete="current-password" required class="input input-bordered w-full">
+
+                            <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Login</button>
+                        </form>
                         <button onclick="toggleForms()" id="toggleFormsButton" type="button" class="btn btn-wide btn-sm mt-2 no-animation">Registreren</button>
+                        <button onclick="medewerkerForm()" id="medewerkerFormButton" type="button" class="btn btn-wide btn-sm mt-2 no-animation">Medewerker</button>
                     <?php endif; ?>
                 </div>
             </div>
-            <button class="btn btn-ghost flex flex-col">
+            <a href="cart.php" role="button" class="btn btn-ghost flex flex-col">
                 <i class="fa-solid fa-cart-shopping fa-xl"></i>
                 <span class="hidden md:inline normal-case">Cart</span>
-            </button>
+            </a>
         </div>
     </div>
     <h1 class="pt-4 text-4xl font-bold text-center">Account informatie</h1>

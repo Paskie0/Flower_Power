@@ -3,6 +3,7 @@ $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
 $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMedewerker'] === true;
 include_once 'checkout-logic.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -115,10 +116,10 @@ include_once 'checkout-logic.php';
                     <?php endif; ?>
                 </div>
             </div>
-            <button class="btn btn-ghost flex flex-col">
+            <a href="cart.php" role="button" class="btn btn-ghost flex flex-col">
                 <i class="fa-solid fa-cart-shopping fa-xl"></i>
                 <span class="hidden md:inline normal-case">Cart</span>
-            </button>
+            </a>
         </div>
     </div>
     <h1 class="font-bold p-4">Bestellen:</h1>
