@@ -97,6 +97,11 @@ $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
                         <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Registreren</button>
                     </form>
                     <button onclick="toggleForms()" id="toggleFormsButton" type="button" class="btn btn-wide btn-sm mt-2 no-animation">Registreren</button>
+                    <?php if ($isLoggedIn) { ?>
+                        <form action="logout.php" method="post">
+                            <button type="submit" class="btn btn-wide btn-sm mt-2 no-animation">Uitloggen</button>
+                        </form>
+                    <?php } ?>
                 </div>
             </div>
             <button class="btn btn-ghost flex flex-col">
@@ -105,9 +110,6 @@ $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
             </button>
         </div>
     </div>
-    <?php if ($isLoggedIn) { ?>
-        <h1>Hello, World!</h1>
-    <?php } ?>
     <div class="hero min-h-screen" style="background-image: url(./img/bouquet-showcase.jpg);">
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-white">
