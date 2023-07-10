@@ -201,7 +201,7 @@ $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
             <a><i class="fa-brands fa-instagram fa-xl"></i></a>
         </div>
     </footer>
-    <script src="./js/script.js"></script>
+    <script src="./js/scripts.js"></script>
 </body>
 
 </html>
