@@ -150,7 +150,7 @@ include_once '../connect.php';
                         <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
                         <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
                         <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
-                        <button class="add-to-cart-button btn btn-primary btn-sm mt-4 no-animation">Add to Cart</button>
+                        <button class="add-to-cart-button btn btn-primary btn-sm mt-4 no-animation" data-product-id="<?php echo $productId; ?>">Add to Cart</button>
                     </div>
                 </div>
         <?php
