@@ -114,119 +114,234 @@ include_once 'account-info.php';
         </div>
     </div>
     <h1 class="pt-4 text-4xl font-bold text-center">Contact informatie</h1>
+    <div class="divider"></div>
     <main class="p-6">
-        <h1 class="text-2xl font-bold mb-4">Account Information</h1>
         <ul class="space-y-4">
-            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
-                <div class="flex items-center justify-between">
-                    <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Email</h2>
-                        <p class="text-gray-500">' . $email . '</p>
-                    </div>
-                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
-                </div>
-            </li>';
-            ?>
-            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
-                <div class="flex items-center justify-between">
-                    <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Voornaam</h2>
-                        <p class="text-gray-500">' . $firstName . '</p>
-                    </div>
-                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
-                </div>
-            </li>';
-            ?>
-            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
-                <div class="flex items-center justify-between">
-                    <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Tussenvoegsel</h2>
-                        <p class="text-gray-500">' . $infix . '</p>
-                    </div>
-                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
-                </div>
-            </li>';
-            ?>
-            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
-                <div class="flex items-center justify-between">
-                    <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Achternaam</h2>
-                        <p class="text-gray-500">' . $lastName . '</p>
-                    </div>
-                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
-                </div>
-            </li>';
-            ?>
-            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
-                <div class="flex items-center justify-between">
-                    <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Wachtwoord</h2>
-                        <p class="text-gray-500">' . $password . '</p>
-                    </div>
-                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
-                </div>
-            </li>';
-            ?>
-            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
-                <div class="flex items-center justify-between">
-                    <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Email</h2>
-                        <p class="text-gray-500">' . $dateOfBirth . '</p>
-                    </div>
-                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
-                </div>
-            </li>';
-            ?>
-            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
-                <div class="flex items-center justify-between">
-                    <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Straatnaam</h2>
-                        <p class="text-gray-500">' . $street . '</p>
-                    </div>
-                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
-                </div>
-            </li>';
-            ?>
-            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
-                <div class="flex items-center justify-between">
-                    <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Huisnummer</h2>
-                        <p class="text-gray-500">' . $houseNumber . '</p>
-                    </div>
-                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
-                </div>
-            </li>';
-            ?>
-            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
-                <div class="flex items-center justify-between">
-                    <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Postcode</h2>
-                        <p class="text-gray-500">' . $postcode . '</p>
-                    </div>
-                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
-                </div>
-            </li>';
-            ?>
-            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
-                <div class="flex items-center justify-between">
-                    <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Plaats</h2>
-                        <p class="text-gray-500">' . $city . '</p>
-                    </div>
-                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
-                </div>
-            </li>';
-            ?>
-            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
-                <div class="flex items-center justify-between">
-                    <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Telefoon</h2>
-                        <p class="text-gray-500">' . $phone . '</p>
-                    </div>
-                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
-                </div>
-            </li>';
-            ?>
+            <ul class="space-y-4">
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Email</h2>
+                <p class="text-gray-500">' . $email . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Voornaam</h2>
+                <p class="text-gray-500">' . $firstName . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Tussenvoegsel</h2>
+                <p class="text-gray-500">' . $infix . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Achternaam</h2>
+                <p class="text-gray-500">' . $lastName . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Wachtwoord</h2>
+                <p class="text-gray-500">' . $password . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Geboortedatum</h2>
+                <p class="text-gray-500">' . $dateOfBirth . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Straatnaam</h2>
+                <p class="text-gray-500">' . $street . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Huisnummer</h2>
+                <p class="text-gray-500">' . $houseNumber . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Postcode</h2>
+                <p class="text-gray-500">' . $postcode . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Plaats</h2>
+                <p class="text-gray-500">' . $city . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Telefoon</h2>
+                <p class="text-gray-500">' . $phone . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+            </ul>
+            <ul class="space-y-4">
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Email</h2>
+                <p class="text-gray-500">' . $email . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Voornaam</h2>
+                <p class="text-gray-500">' . $firstName . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Tussenvoegsel</h2>
+                <p class="text-gray-500">' . $infix . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Achternaam</h2>
+                <p class="text-gray-500">' . $lastName . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Wachtwoord</h2>
+                <p class="text-gray-500">' . $password . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Geboortedatum</h2>
+                <p class="text-gray-500">' . $dateOfBirth . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Straatnaam</h2>
+                <p class="text-gray-500">' . $street . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Huisnummer</h2>
+                <p class="text-gray-500">' . $houseNumber . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Postcode</h2>
+                <p class="text-gray-500">' . $postcode . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Plaats</h2>
+                <p class="text-gray-500">' . $city . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+                <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex-grow">
+                <h2 class="text-lg font-semibold">Telefoon</h2>
+                <p class="text-gray-500">' . $phone . '</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
+        </div>
+    </li>';
+                ?>
+            </ul>
+
         </ul>
     </main>
     <footer class="footer items-center p-4 bg-neutral text-neutral-content">
