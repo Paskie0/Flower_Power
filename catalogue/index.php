@@ -177,6 +177,43 @@ include_once '../connect.php';
             <a><i class="fa-brands fa-instagram fa-xl"></i></a>
         </div>
     </footer>
+    <script>
+        // Get all "Add to Cart" buttons
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+
+        // Attach click event listener to each button
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', addToCart);
+        });
+
+        // Function to handle the "Add to Cart" button click
+        function addToCart(event) {
+            const productId = event.target.getAttribute('data-product-id');
+
+            // Send a request to the server to add the product to the cart
+            fetch('add-to-cart.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'productId=' + encodeURIComponent(productId),
+                })
+                .then(response => {
+                    // Handle the response from the server
+                    if (response.ok) {
+                        // Product added successfully
+                        console.log('Product added to cart.');
+                    } else {
+                        // Error occurred while adding the product
+                        console.error('Failed to add product to cart.');
+                    }
+                })
+                .catch(error => {
+                    // Handle any network or fetch API errors
+                    console.error('An error occurred:', error);
+                });
+        }
+    </script>
     <script src="../js/script.js"></script>
 </body>
 
