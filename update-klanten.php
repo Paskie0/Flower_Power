@@ -11,9 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $field = mysqli_real_escape_string($conn, $field);
     $value = mysqli_real_escape_string($conn, $value);
 
-    // Update the data in the database based on the field
-    $query = "UPDATE klanten SET $field = '$value' WHERE klant_id = {USER_ID}";
-    // Replace {USER_ID} with the actual user ID
+    session_start();
+    $userId = $_SESSION['user_id'];
+
+    // Update the data in the database based on the field and user ID
+    $query = "UPDATE klanten SET $field = '$value' WHERE klant_id = $userId";
 
     if ($conn->query($query) === true) {
         // Data updated successfully
