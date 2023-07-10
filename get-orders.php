@@ -13,10 +13,10 @@ if (mysqli_num_rows($result) > 0) {
         $orderDate = $order['bestelling_datum'];
         $totalAmount = $order['bestelling_totaal'];
 
-        echo "<p>Order ID: $orderId</p>";
-        echo "<p>Customer ID: $customerId</p>";
-        echo "<p>Order Date: $orderDate</p>";
-        echo "<p>Total Amount: $totalAmount</p>";
+        echo "<p>Bestellings nr.: $orderId</p>";
+        echo "<p>Klanten nr.: $customerId</p>";
+        echo "<p>Besteldatum: $orderDate</p>";
+        echo "<p>Totaal: $totalAmount</p>";
         echo "<hr>";
     }
 } else {

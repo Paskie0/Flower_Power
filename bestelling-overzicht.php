@@ -116,7 +116,7 @@
             </a>
         </div>
     </div>
-    <h1>Order List</h1>
+    <h1>Bestellingen:</h1>
     <?php include 'get-orders.php'; ?>
     <footer class="footer items-center p-4 bg-neutral text-neutral-content">
         <div class="items-center grid-flow-col">
@@ -128,7 +128,7 @@
             <a><i class="fa-brands fa-instagram fa-xl"></i></a>
         </div>
     </footer>
-    <script src="../js/script.js"></script>
+    <script src="./js/scripts.js"></script>
 </body>
 
 </html>

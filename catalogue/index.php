@@ -35,7 +35,7 @@ include_once '../connect.php';
                     </li>
                 </ul>
             </div>
-            <a href="index.php" class="btn btn-ghost normal-case text-xl no-animation font-logo">Flower Power</a>
+            <a href="../index.php" class="btn btn-ghost normal-case text-xl no-animation font-logo">Flower Power</a>
             <label class="btn btn-ghost btn-square swap swap-rotate hidden md:inline-grid">
                 <input type="checkbox" id="theme-switcher" />
                 <i class="swap-off fa-solid fa-sun fa-xl"></i>
