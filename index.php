@@ -65,6 +65,7 @@ $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
                 </label>
                 <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
                     <?php if ($isLoggedIn) : ?>
+                        <a href="account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Account</a>
                         <form action="logout.php" method="post">
                             <button type="submit" class="btn btn-wide btn-sm mt-2 no-animation">Uitloggen</button>
                         </form>
