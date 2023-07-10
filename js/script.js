@@ -10,3 +10,9 @@ function toggleForms() {
     document.querySelector("#toggleFormsButton").innerHTML = "Login";
   else document.querySelector("#toggleFormsButton").innerHTML = "Registreren";
 }
+
+function medewerkerForm() {
+  document.querySelector("#medewerker-login").classList.toggle("hidden");
+  document.querySelector("#login").classList.toggle("hidden");
+  document.querySelector("#medewerkerFormButton").classList.toggle("btn-primary");
+}

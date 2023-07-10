@@ -1,3 +1,8 @@
+<?php
+session_start();
+$isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,13 +27,13 @@
                     <li>
                         <a>Collecties</a>
                         <ul class="p-2">
-                            <li><a>Bloemen</a></li>
-                            <li><a>Boeketten</a></li>
+                            <li><a href="catalogue/index.php">Bloemen</a></li>
+                            <li><a href="catalogue/index.php">Boeketten</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
-            <a href="../index.php" class="btn btn-ghost normal-case text-xl no-animation font-logo">Flower Power</a>
+            <a href="index.php" class="btn btn-ghost normal-case text-xl no-animation font-logo">Flower Power</a>
             <label class="btn btn-ghost btn-square swap swap-rotate hidden md:inline-grid">
                 <input type="checkbox" id="theme-switcher" />
                 <i class="swap-off fa-solid fa-sun fa-xl"></i>
@@ -49,7 +54,7 @@
             </ul>
         </div>
         <div class="navbar-end">
-            <a href="../contact.php" role="button" class="btn btn-ghost flex flex-col">
+            <a href="contact.php" role="button" class="btn btn-ghost flex flex-col">
                 <i class="fa-solid fa-address-card fa-xl"></i>
                 <span class="hidden md:inline normal-case">Contact</span>
             </a>
@@ -59,38 +64,44 @@
                     <span class="hidden md:inline normal-case">Account</span>
                 </label>
                 <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
-                    <form action="" method="POST" tabindex="0" id="login">
-                        <label for="email" class="font-semibold py-1">Email:</label>
-                        <input type="email" id="email" name="email" autocomplete="email" required class="input input-bordered w-full">
+                    <?php if ($isLoggedIn) : ?>
+                        <a href="account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Account</a>
+                        <form action="logout.php" method="post">
+                            <button type="submit" class="btn btn-wide btn-sm mt-2 no-animation">Uitloggen</button>
+                        </form>
+                    <?php else : ?>
+                        <form action="login.php" method="post" tabindex="0" id="login" autocomplete="off">
+                            <label for="email" class="font-semibold py-1">Email:</label>
+                            <input type="email" id="email-login" name="email-login" autocomplete="email" required class="input input-bordered w-full">
 
-                        <label for="password" class="font-semibold py-1">Password:</label>
-                        <input type="password" id="password" name="password" autocomplete="current-password" required class="input input-bordered w-full">
+                            <label for="password" class="font-semibold py-1">Password:</label>
+                            <input type="password" id="password-login" name="password-login" autocomplete="current-password" required class="input input-bordered w-full">
 
-                        <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Login</button>
-                    </form>
-                    <form action="" method="POST" tabindex="0" id="register" class="hidden">
-                        <label for="email" class="font-semibold py-4">Email:</label>
-                        <input type="email" id="email" name="email" autocomplete="email" required class="input input-bordered w-full">
+                            <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Login</button>
+                        </form>
+                        <form action="register.php" method="post" tabindex="0" id="register" class="hidden">
+                            <label for="email-register" class="font-semibold py-4">Email:</label>
+                            <input type="email" id="email-register" name="email-register" autocomplete="email" required class="input input-bordered w-full">
 
-                        <label for="password" class="font-semibold py-4">Wachtwoord:</label>
-                        <input type="password" id="password" name="password" autocomplete="new-password" required class="input input-bordered w-full">
+                            <label for="password-register" class="font-semibold py-4">Password:</label>
+                            <input type="password" id="password-register" name="password-register" autocomplete="new-password" required class="input input-bordered w-full">
 
-                        <label for="first-name" class="font-semibold py-4">Voornaam:</label>
-                        <input type="text" id="first-name" name="first-name" autocomplete="given-name" required class="input input-bordered w-full">
+                            <label for="first-name" class="font-semibold py-4">First Name:</label>
+                            <input type="text" id="first-name" name="first-name" autocomplete="given-name" required class="input input-bordered w-full">
 
-                        <label for="infix" class="font-semibold py-4">Tussenvoegsel:</label>
-                        <input type="text" id="infix" name="infix" autocomplete="additional-name" class="input input-bordered w-full">
+                            <label for="infix" class="font-semibold py-4">Infix:</label>
+                            <input type="text" id="infix" name="infix" autocomplete="additional-name" class="input input-bordered w-full">
 
-                        <label for="last-name" class="font-semibold py-4">Achternaam:</label>
-                        <input type="text" id="last-name" name="last-name" autocomplete="family-name" required class="input input-bordered w-full">
+                            <label for="last-name" class="font-semibold py-4">Last Name:</label>
+                            <input type="text" id="last-name" name="last-name" autocomplete="family-name" required class="input input-bordered w-full">
 
-                        <label for="date-of-birth" class="font-semibold py-4">Geboortedatum:</label>
-                        <input type="date" id="date-of-birth" name="date-of-birth" autocomplete="bday" required class="input input-bordered w-full">
+                            <label for="date-of-birth" class="font-semibold py-4">Date of Birth:</label>
+                            <input type="date" id="date-of-birth" name="date-of-birth" autocomplete="bday" required class="input input-bordered w-full">
 
-
-                        <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Registreren</button>
-                    </form>
-                    <button onclick="toggleForms()" id="toggleFormsButton" type="button" class="btn btn-wide btn-sm mt-2 no-animation">Registreren</button>
+                            <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Registreren</button>
+                        </form>
+                        <button onclick="toggleForms()" id="toggleFormsButton" type="button" class="btn btn-wide btn-sm mt-2 no-animation">Registreren</button>
+                    <?php endif; ?>
                 </div>
             </div>
             <button class="btn btn-ghost flex flex-col">
@@ -186,7 +197,7 @@
             <a><i class="fa-brands fa-instagram fa-xl"></i></a>
         </div>
     </footer>
-    <script src="./js/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
