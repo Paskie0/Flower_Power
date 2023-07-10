@@ -141,7 +141,7 @@ include_once 'connect.php';
 
                     <label for="product_beschrijving" class="font-semibold py-1">Product Description:</label>
                     <textarea id="product_beschrijving" name="product_beschrijving" required></textarea><br>
-                    <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Login</button>
+                    <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Toevoegen</button>
                 </form>
             </div>
         </div>
@@ -176,6 +176,7 @@ include_once 'connect.php';
                     <div class="buttons">
                         <button class="edit-button" data-product-id="<?php echo $productId; ?>">Edit</button>
                         <button class="save-button hidden" data-product-id="<?php echo $productId; ?>">Save</button>
+                        <button class="delete-button" data-product-id="<?php echo $productId; ?>">Delete</button>
                     </div>
                 </div>
         <?php
