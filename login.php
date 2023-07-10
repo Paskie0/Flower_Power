@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo '<script type="text/javascript">';
         echo 'alert("' . $message . '");';
+        echo 'window.location.href = "index.php";';
         echo '</script>';
     }
     $conn->close();
