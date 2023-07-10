@@ -145,7 +145,6 @@ include_once 'connect.php';
                 $productPrijs = $product['artikel_prijs'];
                 $productBeschrijving = $product['artikel_beschrijving'];
         ?>
-
                 <div class="product-item">
                     <a href="<?php echo "product-overview/" . $productId ?>" class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all">
                         <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
@@ -153,11 +152,10 @@ include_once 'connect.php';
                         <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
                     </a>
                     <div class="buttons">
-                        <button class="edit-button">Edit</button>
-                        <button class="save-button">Save</button>
+                        <button class="edit-button" data-product-id="<?php echo $productId; ?>">Edit</button>
+                        <button class="save-button hidden" data-product-id="<?php echo $productId; ?>">Save</button>
                     </div>
                 </div>
-
         <?php
             }
         } else {
@@ -171,6 +169,62 @@ include_once 'connect.php';
         // Close the database connection
         mysqli_close($conn);
         ?>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                // Edit button click event
+                $('.edit-button').on('click', function() {
+                    var productId = $(this).data('product-id');
+                    var productContainer = $(this).closest('.product-item');
+
+                    // Toggle edit and save buttons visibility
+                    $(this).addClass('hidden');
+                    productContainer.find('.save-button').removeClass('hidden');
+
+                    // Enable editing of product details
+                    productContainer.find('h2, p').attr('contenteditable', 'true');
+                });
+
+                // Save button click event
+                $('.save-button').on('click', function() {
+                    var productId = $(this).data('product-id');
+                    var productContainer = $(this).closest('.product-item');
+
+                    // Disable editing of product details
+                    productContainer.find('h2, p').attr('contenteditable', 'false');
+
+                    // Retrieve updated product details
+                    var productName = productContainer.find('h2').text();
+                    var productPrice = productContainer.find('p:eq(0)').text().replace('Price: $', '');
+                    var productDescription = productContainer.find('p:eq(1)').text();
+
+                    // Send AJAX request to update product details on the server
+                    $.ajax({
+                        method: 'POST',
+                        url: 'update-product.php',
+                        data: {
+                            productId: productId,
+                            productName: productName,
+                            productPrice: productPrice,
+                            productDescription: productDescription
+                        },
+                        success: function(response) {
+                            // Handle success response, if needed
+                            console.log('Product details updated successfully.');
+                        },
+                        error: function(xhr, status, error) {
+                            // Handle error response, if needed
+                            console.log('Error updating product details:', error);
+                        }
+                    });
+
+                    // Toggle save and edit buttons visibility
+                    $(this).addClass('hidden');
+                    productContainer.find('.edit-button').removeClass('hidden');
+                });
+            });
+        </script>
     </div>
     <footer class="footer items-center p-4 bg-neutral text-neutral-content">
         <div class="items-center grid-flow-col">
