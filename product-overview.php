@@ -2,6 +2,7 @@
 session_start();
 $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
 $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMedewerker'] === true;
+include_once 'connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -10,8 +11,8 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collectie</title>
-    <link rel="stylesheet" href="../css/output.css">
+    <title>Flower Power</title>
+    <link rel="stylesheet" href="css/output.css">
     <script src="https://kit.fontawesome.com/d437031e9c.js" crossorigin="anonymous"></script>
 </head>
 
@@ -122,82 +123,47 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
             </button>
         </div>
     </div>
-    <h1 class="pt-4 text-4xl font-bold text-center">Producten</h1>
+    <h1 class="pt-4 text-4xl font-bold text-center">Product overzicht</h1>
     <div class="divider"></div>
-    <div class="p-4 grid grid-flow-col grid-cols-2 grid-rows-4 md:grid-cols-3 md:grid-rows-3 lg:grid-cols-4 lg:grid-rows-2">
-        <div class="card w-48 bg-base-100 shadow-xl">
-            <figure><img src="../img/flower1.webp" alt="Shoes" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">
-                    Boeket
-                    <div class="badge badge-secondary">Nieuw</div>
-                </h2>
-                <p>Beautiful Flowers</p>
-            </div>
-        </div>
-        <div class="card w-48 bg-base-100 shadow-xl">
-            <figure><img src="../img/flower2.webp" alt="Shoes" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">
-                    Boeket
-                </h2>
-                <p>Beautiful Flowers</p>
-            </div>
-        </div>
-        <div class="card w-48 bg-base-100 shadow-xl">
-            <figure><img src="../img/flower3.webp" alt="Shoes" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">
-                    Boeket
-                </h2>
-                <p>Beautiful Flowers</p>
-            </div>
-        </div>
-        <div class="card w-48 bg-base-100 shadow-xl">
-            <figure><img src="../img/flower4.webp" alt="Shoes" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">
-                    Boeket
-                </h2>
-                <p>Beautiful Flowers</p>
-            </div>
-        </div>
-        <div class="card w-48 bg-base-100 shadow-xl">
-            <figure><img src="../img/flower1.webp" alt="Shoes" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">
-                    Boeket
-                </h2>
-                <p>Beautiful Flowers</p>
-            </div>
-        </div>
-        <div class="card w-48 bg-base-100 shadow-xl">
-            <figure><img src="../img/flower2.webp" alt="Shoes" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">
-                    Boeket
-                </h2>
-                <p>Beautiful Flowers</p>
-            </div>
-        </div>
-        <div class="card w-48 bg-base-100 shadow-xl">
-            <figure><img src="../img/flower3.webp" alt="Shoes" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">
-                    Boeket
-                </h2>
-                <p>Beautiful Flowers</p>
-            </div>
-        </div>
-        <div class="card w-48 bg-base-100 shadow-xl">
-            <figure><img src="../img/flower4.webp" alt="Shoes" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">
-                    Boeket
-                </h2>
-                <p>Beautiful Flowers</p>
-            </div>
-        </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+        <?php
+        // Assuming you have already established a database connection
+
+        // Query to retrieve products from the database
+        $query = "SELECT * FROM artikelen";
+
+        // Execute the query
+        $result = mysqli_query($conn, $query);
+
+        // Check if the query was successful
+        if ($result && mysqli_num_rows($result) > 0) {
+            $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+            foreach ($products as $product) {
+                $productNaam = $product['artikel_naam'];
+                $productPrijs = $product['artikel_prijs'];
+                $productBeschrijving = $product['artikel_beschrijving'];
+        ?>
+
+                <a href="#" class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all">
+                    <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
+                    <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
+                    <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
+                </a>
+
+        <?php
+            }
+        } else {
+            // No products found in the database
+            echo '<p>No products found.</p>';
+        }
+
+        // Free the result set
+        mysqli_free_result($result);
+
+        // Close the database connection
+        mysqli_close($conn);
+        ?>
     </div>
     <footer class="footer items-center p-4 bg-neutral text-neutral-content">
         <div class="items-center grid-flow-col">
@@ -209,7 +175,7 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
             <a><i class="fa-brands fa-instagram fa-xl"></i></a>
         </div>
     </footer>
-    <script src="../js/script.js"></script>
+    <script src="./js/scripts.js"></script>
 </body>
 
 </html>
