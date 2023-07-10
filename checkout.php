@@ -134,13 +134,13 @@ include_once 'checkout-logic.php';
             $quantity = 1;
             $subtotal = $productPrice * $quantity;
         ?>
-            <li><?php echo $productName; ?> - Quantity: <?php echo $quantity; ?> - Subtotal: $<?php echo $subtotal; ?></li>
+            <li><?php echo $productName; ?> - Hoeveelheid: <?php echo $quantity; ?> - Totaal: $<?php echo $subtotal; ?></li>
         <?php
         }
         ?>
     </ul>
 
-    <h2>Total Price: $<?php echo $totalPrice; ?></h2>
+    <h2>Totaal: €<?php echo $totalPrice; ?></h2>
     <footer class="footer items-center p-4 bg-neutral text-neutral-content">
         <div class="items-center grid-flow-col">
             <p>@ 2023 Flower Power - All right reserved</p>
