@@ -127,51 +127,56 @@ include_once 'account-info.php';
                 </div>
             </li>';
             ?>
-            <li class="bg-transparent rounded-lg shadow-md p-4">
+            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
                         <h2 class="text-lg font-semibold">Voornaam</h2>
-                        <p class="text-gray-500">Pascal</p>
+                        <p class="text-gray-500">' . $firstName . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
                 </div>
-            </li>
-            <li class="bg-transparent rounded-lg shadow-md p-4">
+            </li>';
+            ?>
+            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
                         <h2 class="text-lg font-semibold">Tussenvoegsel</h2>
-                        <p class="text-gray-500"></p>
+                        <p class="text-gray-500">' . $infix . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
                 </div>
-            </li>
-            <li class="bg-transparent rounded-lg shadow-md p-4">
+            </li>';
+            ?>
+            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
                         <h2 class="text-lg font-semibold">Achternaam</h2>
-                        <p class="text-gray-500">de Wit</p>
+                        <p class="text-gray-500">' . $lastName . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
                 </div>
-            </li>
-            <li class="bg-transparent rounded-lg shadow-md p-4">
+            </li>';
+            ?>
+            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
                         <h2 class="text-lg font-semibold">Wachtwoord</h2>
-                        <p class="text-gray-500">********</p>
+                        <p class="text-gray-500">' . $password . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
                 </div>
-            </li>
-            <li class="bg-transparent rounded-lg shadow-md p-4">
+            </li>';
+            ?>
+            <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Geboortedatum</h2>
-                        <p class="text-gray-500">02-07-2002</p>
+                        <h2 class="text-lg font-semibold">Email</h2>
+                        <p class="text-gray-500">' . $dateOfBirth . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Edit</button>
                 </div>
-            </li>
+            </li>';
+            ?>
             <li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
