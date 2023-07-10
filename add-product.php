@@ -19,6 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo 'Error adding product.';
     }
 }
-
+header("Location: product-overview.php");
 // Close the database connection
 mysqli_close($conn);
