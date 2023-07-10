@@ -116,6 +116,8 @@
             </button>
         </div>
     </div>
+    <h1>Order List</h1>
+    <?php include 'get_orders.php'; ?>
     <footer class="footer items-center p-4 bg-neutral text-neutral-content">
         <div class="items-center grid-flow-col">
             <p>@ 2023 Flower Power - All right reserved</p>
