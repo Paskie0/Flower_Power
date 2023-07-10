@@ -168,7 +168,7 @@ include_once 'connect.php';
                 $productBeschrijving = $product['artikel_beschrijving'];
         ?>
                 <div class="product-item">
-                    <div class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all">
+                    <div class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all cursor-pointer">
                         <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
                         <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
                         <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>

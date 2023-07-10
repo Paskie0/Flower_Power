@@ -7984,6 +7984,10 @@ details.collapse summary::-webkit-details-marker{
   transform: none;
 }
 
+.cursor-pointer{
+  cursor: pointer;
+}
+
 .touch-auto{
   touch-action: auto;
 }
