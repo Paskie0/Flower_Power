@@ -122,7 +122,7 @@ include_once 'get-cart-items.php';
             </button>
         </div>
     </div>
-    <h2 class="font-bold">Winkelwagen:</h2>
+    <h2 class="font-bold p-4">Winkelwagen:</h2>
     <ul class="p-4">
         <?php foreach ($cartItems as $item) : ?>
             <li><?php echo $item['artikel_naam']; ?> - $<?php echo $item['artikel_prijs']; ?></li>
