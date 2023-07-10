@@ -149,15 +149,11 @@ include_once 'connect.php';
     <div class="divider"></div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
         <?php
-        // Assuming you have already established a database connection
 
-        // Query to retrieve products from the database
         $query = "SELECT * FROM artikelen";
 
-        // Execute the query
         $result = mysqli_query($conn, $query);
 
-        // Check if the query was successful
         if ($result && mysqli_num_rows($result) > 0) {
             $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -182,47 +178,37 @@ include_once 'connect.php';
         <?php
             }
         } else {
-            // No products found in the database
             echo '<p>No products found.</p>';
         }
 
-        // Free the result set
         mysqli_free_result($result);
 
-        // Close the database connection
         mysqli_close($conn);
         ?>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
             $(document).ready(function() {
-                // Edit button click event
                 $('.edit-button').on('click', function() {
                     var productId = $(this).data('product-id');
                     var productContainer = $(this).closest('.product-item');
 
-                    // Toggle edit and save buttons visibility
                     $(this).addClass('hidden');
                     productContainer.find('.save-button').removeClass('hidden');
 
-                    // Enable editing of product details
                     productContainer.find('h2, p').attr('contenteditable', 'true');
                 });
 
-                // Save button click event
                 $('.save-button').on('click', function() {
                     var productId = $(this).data('product-id');
                     var productContainer = $(this).closest('.product-item');
 
-                    // Disable editing of product details
                     productContainer.find('h2, p').attr('contenteditable', 'false');
 
-                    // Retrieve updated product details
                     var productName = productContainer.find('h2').text();
                     var productPrice = productContainer.find('p:eq(0)').text().replace('Price: $', '');
                     var productDescription = productContainer.find('p:eq(1)').text();
 
-                    // Send AJAX request to update product details on the server
                     $.ajax({
                         method: 'POST',
                         url: 'update-product.php',
@@ -233,16 +219,13 @@ include_once 'connect.php';
                             productDescription: productDescription
                         },
                         success: function(response) {
-                            // Handle success response, if needed
                             console.log('Product details updated successfully.');
                         },
                         error: function(xhr, status, error) {
-                            // Handle error response, if needed
                             console.log('Error updating product details:', error);
                         }
                     });
 
-                    // Toggle save and edit buttons visibility
                     $(this).addClass('hidden');
                     productContainer.find('.edit-button').removeClass('hidden');
                 });

@@ -11,21 +11,18 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 // Retrieve the user ID from the session
 $userId = $_SESSION['user_id'];
 
-// Retrieve the cart items for the user from the database
 $query = "SELECT a.artikel_naam, a.artikel_prijs
           FROM artikelen AS a
           INNER JOIN winkelwagen AS c ON a.artikel_id = c.artikel_id
           WHERE c.klant_id = '$userId'";
 $result = mysqli_query($conn, $query);
 
-// Retrieve the shipping information from the form
 $klant_straatnaam = $_POST['klant_straatnaam'];
 $klant_huisnummer = $_POST['klant_huisnummer'];
 $klant_postcode = $_POST['klant_postcode'];
 $klant_plaats = $_POST['klant_plaats'];
 $klant_telefoon = $_POST['klant_telefoon'];
 
-// Process the shipping information as needed (e.g., store in the database)
 $updateQuery = "UPDATE klanten SET klant_straatnaam = '$klant_straatnaam',
                                 klant_huisnummer = '$klant_huisnummer',
                                 klant_postcode = '$klant_postcode',
@@ -34,7 +31,6 @@ $updateQuery = "UPDATE klanten SET klant_straatnaam = '$klant_straatnaam',
                 WHERE klant_id = '$userId'";
 mysqli_query($conn, $updateQuery);
 
-// Calculate the total order amount
 $totalAmount = 0;
 while ($row = mysqli_fetch_assoc($result)) {
     $productPrice = $row['artikel_prijs'];
@@ -42,11 +38,9 @@ while ($row = mysqli_fetch_assoc($result)) {
     $totalAmount += $productPrice * $quantity;
 }
 
-// Insert a new entry into the 'bestellingen' table
 $insertQuery = "INSERT INTO bestellingen (klant_id, bestelling_datum, bestelling_totaal)
                 VALUES ('$userId', NOW(), '$totalAmount')";
 mysqli_query($conn, $insertQuery);
-// Close the database connection
 mysqli_close($conn);
 header('Location: complete.php');
 exit;

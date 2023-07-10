@@ -126,7 +126,6 @@ include_once 'checkout-logic.php';
     <h2 class="p-4">Artikelen in winkelwagen:</h2>
     <ul class="p-4">
         <?php
-        // Display the cart items
         mysqli_data_seek($result, 0);
         while ($row = mysqli_fetch_assoc($result)) {
             $productName = $row['artikel_naam'];

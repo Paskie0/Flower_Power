@@ -16,9 +16,7 @@ include_once 'medewerker-info.php';
     <title>Flower Power</title>
     <link rel="stylesheet" href="css/output.css">
     <script src="https://kit.fontawesome.com/d437031e9c.js" crossorigin="anonymous"></script>
-    <!-- Include the jQuery library -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- JavaScript code -->
     <script>
         $(document).ready(function() {
             $('.edit-btn').click(function() {

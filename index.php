@@ -137,38 +137,38 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
     <div class="carousel carousel-center max-w-full p-4 space-x-4">
         <div class="carousel-item flex-col w-40">
             <img src="./img/flower1.webp" class="rounded-box" />
-            <h3 class="font-semibold text-lg">Flower</h3>
-            <p>€19,95</p>
+            <h3 class="font-semibold text-lg">Rose</h3>
+            <p>€10.99</p>
         </div>
         <div class="carousel-item flex-col w-40">
             <img src="./img/flower1.webp" class="rounded-box" />
-            <h3 class="font-semibold text-lg">Flower</h3>
-            <p>€19,95</p>
+            <h3 class="font-semibold text-lg">Tulip</h3>
+            <p>€5.99</p>
         </div>
         <div class="carousel-item flex-col w-40">
             <img src="./img/flower1.webp" class="rounded-box" />
-            <h3 class="font-semibold text-lg">Flower</h3>
-            <p>€19,95</p>
+            <h3 class="font-semibold text-lg">Lily</h3>
+            <p>€8.99</p>
         </div>
         <div class="carousel-item flex-col w-40">
             <img src="./img/flower1.webp" class="rounded-box" />
-            <h3 class="font-semibold text-lg">Flower</h3>
-            <p>€19,95</p>
+            <h3 class="font-semibold text-lg">Sunflower</h3>
+            <p>€7.99</p>
         </div>
         <div class="carousel-item flex-col w-40">
             <img src="./img/flower1.webp" class="rounded-box" />
-            <h3 class="font-semibold text-lg">Flower</h3>
-            <p>€19,95</p>
+            <h3 class="font-semibold text-lg">Orchid</h3>
+            <p>€9.99</p>
         </div>
         <div class="carousel-item flex-col w-40">
             <img src="./img/flower1.webp" class="rounded-box" />
-            <h3 class="font-semibold text-lg">Flower</h3>
-            <p>€19,95</p>
+            <h3 class="font-semibold text-lg">Carnation</h3>
+            <p>€16.00</p>
         </div>
         <div class="carousel-item flex-col w-40">
             <img src="./img/flower1.webp" class="rounded-box" />
-            <h3 class="font-semibold text-lg">Flower</h3>
-            <p>€19,95</p>
+            <h3 class="font-semibold text-lg">Gerbera</h3>
+            <p>€5.00</p>
         </div>
     </div>
     <h3 class="py-4 pl-4 text-xl inline">Ontdek al onze producten</h3>
