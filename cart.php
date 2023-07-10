@@ -122,8 +122,8 @@ include_once 'get-cart-items.php';
             </button>
         </div>
     </div>
-    <h2>Cart Items:</h2>
-    <ul>
+    <h2 class="font-bold">Winkelwagen:</h2>
+    <ul class="p-4">
         <?php foreach ($cartItems as $item) : ?>
             <li><?php echo $item['artikel_naam']; ?> - $<?php echo $item['artikel_prijs']; ?></li>
         <?php endforeach; ?>
