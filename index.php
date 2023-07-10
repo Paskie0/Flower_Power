@@ -1,6 +1,7 @@
 <?php
 session_start();
 $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
+$isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMedewerker'] === true;
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +65,7 @@ $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
                     <span class="hidden md:inline normal-case">Account</span>
                 </label>
                 <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
-                    <?php if ($isLoggedIn) : ?>
+                    <?php if ($isLoggedIn || $isMedewerker) : ?>
                         <a href="account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Account</a>
                         <form action="logout.php" method="post">
                             <button type="submit" class="btn btn-wide btn-sm mt-2 no-animation">Uitloggen</button>
