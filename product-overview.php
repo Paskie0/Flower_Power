@@ -124,6 +124,26 @@ include_once 'connect.php';
         </div>
     </div>
     <h1 class="pt-4 text-4xl font-bold text-center">Product overzicht</h1>
+    <div class="dropdown dropdown-end drop-shadow-lg">
+        <label tabindex="0" class="btn btn-ghost flex flex-col">
+            <i class="fa-solid fa-plus fa-xl"></i>
+            <span class="hidden md:inline normal-case">Product toevoegen</span>
+        </label>
+        <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
+            <form action="add-product.php" method="post" tabindex="0" id="login" autocomplete="off">
+
+                <label for="product_naam" class="font-semibold py-1">Product Name:</label>
+                <input type="text" id="product_naam" name="product_naam" required class="input input-bordered w-full"><br>
+
+                <label for="product_prijs" class="font-semibold py-1">Product Price:</label>
+                <input type="number" id="product_prijs" name="product_prijs" required class="input input-bordered w-full"><br>
+
+                <label for="product_beschrijving" class="font-semibold py-1">Product Description:</label>
+                <textarea id="product_beschrijving" name="product_beschrijving" required></textarea><br>
+                <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Login</button>
+            </form>
+        </div>
+    </div>
     <div class="divider"></div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
         <?php
