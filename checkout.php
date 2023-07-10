@@ -141,20 +141,20 @@ include_once 'checkout-logic.php';
     </ul>
     <h2>Totaal: €<?php echo $totalPrice; ?></h2>
     <form action="complete.php" method="post">
-        <label for="klant_straatnaam">Straatnaam:</label>
-        <input type="text" id="klant_straatnaam" name="klant_straatnaam" required>
+        <label for="klant_straatnaam" class="font-semibold py-1">Straatnaam:</label>
+        <input type="text" id="klant_straatnaam" name="klant_straatnaam" required class="input input-bordered w-full">
 
-        <label for="klant_huisnummer">Huisnummer:</label>
-        <input type="text" id="klant_huisnummer" name="klant_huisnummer" required>
+        <label for="klant_huisnummer" class="font-semibold py-1">Huisnummer:</label>
+        <input type="text" id="klant_huisnummer" name="klant_huisnummer" required class="input input-bordered w-full">
 
-        <label for="klant_postcode">Postcode:</label>
-        <input type="text" id="klant_postcode" name="klant_postcode" required>
+        <label for="klant_postcode" class="font-semibold py-1">Postcode:</label>
+        <input type="text" id="klant_postcode" name="klant_postcode" required class="input input-bordered w-full">
 
-        <label for="klant_plaats">Plaats:</label>
-        <input type="text" id="klant_plaats" name="klant_plaats" required>
+        <label for="klant_plaats" class="font-semibold py-1">Plaats:</label>
+        <input type="text" id="klant_plaats" name="klant_plaats" required class="input input-bordered w-full">
 
-        <label for="klant_telefoon">Telefoon:</label>
-        <input type="text" id="klant_telefoon" name="klant_telefoon" required>
+        <label for="klant_telefoon" class="font-semibold py-1">Telefoon:</label>
+        <input type="text" id="klant_telefoon" name="klant_telefoon" required class="input input-bordered w-full">
 
         <button type="submit">Bestelling afronden</button>
     </form>
