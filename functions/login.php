@@ -17,7 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $succesMessage = "Ingelogd!";
         echo '<script type="text/javascript">';
         echo 'alert("' . $succesMessage . '");';
-        echo 'window.location.href = "/Flower-Power/index.php";';
         echo '</script>';
     } else {
         $errorMessage = "Fout wachtwoord of emailadres";
