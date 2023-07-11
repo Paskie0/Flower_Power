@@ -3,7 +3,7 @@ module.exports = {
   content: ["./**/*.{php,html,js}"],
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["retro", "dark"],
+    themes: ["dark"],
   },
   theme: {
     fontFamily: {

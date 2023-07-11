@@ -16,11 +16,6 @@
             </ul>
         </div>
         <a href="/Flower-Power/index.php" class="btn btn-ghost normal-case text-xl no-animation font-logo">Flower Power</a>
-        <label class="btn btn-ghost btn-square swap swap-rotate hidden md:inline-grid">
-            <input type="checkbox" id="theme-switcher" />
-            <i class="swap-off fa-solid fa-sun fa-xl"></i>
-            <i class="swap-on fa-solid fa-moon fa-xl"></i>
-        </label>
     </div>
     <div class="navbar-center hidden md:flex">
         <ul class="menu menu-horizontal px-1">
