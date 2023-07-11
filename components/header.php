@@ -92,7 +92,10 @@
             </div>
         </div>
         <a href="/Flower-Power/cart.php" role="button" class="btn btn-ghost flex flex-col">
-            <i class="fa-solid fa-cart-shopping fa-xl"></i>
+            <span class="fa-layers fa-fw" style="background:MistyRose">
+                <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                <span class="fa-layers-counter" style="background:Tomato">1</span>
+            </span>
             <span class="hidden md:inline normal-case">Cart</span>
         </a>
     </div>
