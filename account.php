@@ -1,6 +1,6 @@
 <?php
 include_once './functions/initialize.php';
-include_once 'account-info.php';
+include_once './functions/account-info.php';
 ?>
 
 <!DOCTYPE html>
