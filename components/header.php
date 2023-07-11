@@ -10,12 +10,12 @@
                 <li>
                     <a>Collecties</a>
                     <ul class="p-2">
-                        <li><a href="/product-overview.php">Bloemen</a></li>
+                        <li><a href="/Flower-Power/product-overview.php">Bloemen</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
-        <a href="/index.php" class="btn btn-ghost normal-case text-xl no-animation font-logo">Flower Power</a>
+        <a href="/Flower-Power/index.php" class="btn btn-ghost normal-case text-xl no-animation font-logo">Flower Power</a>
         <label class="btn btn-ghost btn-square swap swap-rotate hidden md:inline-grid">
             <input type="checkbox" id="theme-switcher" />
             <i class="swap-off fa-solid fa-sun fa-xl"></i>
@@ -28,14 +28,14 @@
                 <details>
                     <summary>Collecties</summary>
                     <ul class="p-2">
-                        <li><a href="/product-overview.php">Bloemen</a></li>
+                        <li><a href="/Flower-Power/product-overview.php">Bloemen</a></li>
                     </ul>
                 </details>
             </li>
         </ul>
     </div>
     <div class="navbar-end">
-        <a href="/contact.php" role="button" class="btn btn-ghost flex flex-col">
+        <a href="/Flower-Power/contact.php" role="button" class="btn btn-ghost flex flex-col">
             <i class="fa-solid fa-address-card fa-xl"></i>
             <span class="hidden md:inline normal-case">Contact</span>
         </a>
@@ -46,8 +46,8 @@
             </label>
             <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
                 <?php if ($isLoggedIn || $isMedewerker) : ?>
-                    <a href="/account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Account</a>
-                    <a href="/medewerker-account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Medewerker</a>
+                    <a href="/Flower-Power/account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Account</a>
+                    <a href="/Flower-Power/medewerker-account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Medewerker</a>
                     <form action="logout.php" method="post">
                         <button type="submit" class="btn btn-wide btn-sm mt-2 no-animation">Uitloggen</button>
                     </form>
@@ -96,7 +96,7 @@
                 <?php endif; ?>
             </div>
         </div>
-        <a href="/cart.php" role="button" class="btn btn-ghost flex flex-col">
+        <a href="/Flower-Power/cart.php" role="button" class="btn btn-ghost flex flex-col">
             <i class="fa-solid fa-cart-shopping fa-xl"></i>
             <span class="hidden md:inline normal-case">Cart</span>
         </a>
