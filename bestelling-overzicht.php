@@ -10,10 +10,10 @@
 </head>
 
 <body>
-    <?php include '/Flower-Power/components/header.php'; ?>
+    <?php include './components/header.php'; ?>
     <h1>Bestellingen:</h1>
     <?php include 'get-orders.php'; ?>
-    <?php include '/Flower-Power/components/footer.php'; ?>
+    <?php include './components/footer.php'; ?>
 </body>
 
 </html>

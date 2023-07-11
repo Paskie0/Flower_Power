@@ -17,7 +17,7 @@ include_once '../connect.php';
 </head>
 
 <body>
-    <?php include '/Flower-Power/components/header.php'; ?>
+    <?php include '../components/header.php'; ?>
     <h1 class="pt-4 text-4xl font-bold text-center">Producten</h1>
     <div class="divider"></div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
@@ -62,7 +62,7 @@ include_once '../connect.php';
         mysqli_close($conn);
         ?>
     </div>
-    <?php include '/Flower-Power/components/footer.php'; ?>
+    <?php include '../components/footer.php'; ?>
     <script>
         // Get all "Add to Cart" buttons
         const addToCartButtons = document.querySelectorAll('.add-to-cart-button');

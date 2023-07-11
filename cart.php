@@ -16,7 +16,7 @@ include_once 'get-cart-items.php';
 </head>
 
 <body>
-    <?php include '/Flower-Power/components/header.php'; ?>
+    <?php include './components/header.php'; ?>
     <h2 class="font-bold p-4">Winkelwagen:</h2>
     <ul class="p-4">
         <?php foreach ($cartItems as $item) : ?>
@@ -24,7 +24,7 @@ include_once 'get-cart-items.php';
         <?php endforeach; ?>
     </ul>
     <a href="checkout.php" class="btn btn-primary m-4">Bestellen</a>
-    <?php include '/Flower-Power/components/footer.php'; ?>
+    <?php include './components/footer.php'; ?>
 </body>
 
 </html>

@@ -17,7 +17,7 @@ include_once 'connect.php';
 </head>
 
 <body>
-    <?php include '/Flower-Power/components/header.php'; ?>
+    <?php include './components/header.php'; ?>
     <div class="flex items-center justify-center">
         <h1 class="pt-4 text-4xl font-bold">Product overzicht</h1>
         <div class="dropdown dropdown-end drop-shadow-lg ml-4">
@@ -127,7 +127,7 @@ include_once 'connect.php';
             });
         </script>
     </div>
-    <?php include '/Flower-Power/components/footer.php'; ?>
+    <?php include './components/footer.php'; ?>
 </body>
 
 </html>

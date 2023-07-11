@@ -15,7 +15,7 @@ $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
 </head>
 
 <body>
-    <?php include '/Flower-Power/components/header.php'; ?>
+    <?php include './components/header.php'; ?>
     <h1 class="pt-4 text-4xl font-bold text-center">Contact informatie</h1>
     <div class="divider"></div>
     <div class="hero min-h-[30%]">
@@ -46,7 +46,7 @@ $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
             </div>
         </div>
     </div>
-    <?php include '/Flower-Power/components/footer.php'; ?>
+    <?php include './components/footer.php'; ?>
 </body>
 
 </html>

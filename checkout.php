@@ -16,7 +16,7 @@ include_once 'checkout-logic.php';
 </head>
 
 <body>
-    <?php include '/Flower-Power/components/header.php'; ?>
+    <?php include './components/header.php'; ?>
     <h1 class="font-bold p-4">Bestellen:</h1>
 
     <h2 class="p-4">Artikelen in winkelwagen:</h2>
@@ -53,7 +53,7 @@ include_once 'checkout-logic.php';
 
         <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Bestelling afronden</button>
     </form>
-    <?php include '/Flower-Power/components/footer.php'; ?>
+    <?php include './components/footer.php'; ?>
 </body>
 
 </html>
