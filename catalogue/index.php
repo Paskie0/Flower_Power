@@ -106,7 +106,7 @@ include_once '../functions/initialize.php';
                 quantityInput.addEventListener('input', function(event) {
                     var quantity = event.target.value;
                     var addToCartButton = event.target.parentNode.querySelector('.add-to-cart-button');
-                    addToCartButton.setAttribute('data-quantity', quantity);
+                    addToCartButton.dataset.quantity = quantity; // Update the dataset value
                 });
             });
         });
