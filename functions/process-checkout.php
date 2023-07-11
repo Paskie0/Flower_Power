@@ -1,4 +1,7 @@
 <?php
+session_start();
+include_once 'connect.php';
+
 // Check if the user is logged in or redirect to the login page if not
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: login.php');

@@ -14,14 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['loggedin'] = true;
         $_SESSION['user_id'] = $row['klant_id'];
         $_SESSION['username'] = $row['klant_email'];
-        header("Location: index.php");
+        header("Location: /Flower-Power/index.php");
         exit();
     } else {
         $message = "Fout wachtwoord of emailadres";
 
         echo '<script type="text/javascript">';
         echo 'alert("' . $message . '");';
-        echo 'window.location.href = "index.php";';
+        echo 'window.location.href = "/Flower-Power/index.php";';
         echo '</script>';
     }
     $conn->close();

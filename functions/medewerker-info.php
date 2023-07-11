@@ -1,4 +1,6 @@
 <?php
+include_once 'connect.php';
+
 $medewerker = $_SESSION['medewerker_id'];
 
 $sql = "SELECT * FROM medewerkers WHERE medewerker_id = '$medewerker'";

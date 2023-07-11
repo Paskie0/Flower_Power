@@ -1,4 +1,9 @@
 <?php
+session_start();
+$isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
+$isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMedewerker'] === true;
+include_once 'connect.php';
+
 if (!$isLoggedIn) {
     header('Location: login.php');
     exit();

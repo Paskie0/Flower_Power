@@ -1,4 +1,6 @@
 <?php
+include_once 'connect.php';
+
 $klant_id = $_SESSION['user_id'];
 
 $sql = "SELECT * FROM klanten WHERE klant_id = '$klant_id'";

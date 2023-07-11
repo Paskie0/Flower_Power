@@ -1,4 +1,6 @@
 <?php
+include_once 'connect.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $productNaam = $_POST['product_naam'];
     $productPrijs = $_POST['product_prijs'];

@@ -1,4 +1,6 @@
 <?php
+include_once 'connect.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $field = $_POST['field'];
     $value = $_POST['value'];
