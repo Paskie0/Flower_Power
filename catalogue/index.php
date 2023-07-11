@@ -103,7 +103,7 @@ include_once '../functions/initialize.php';
         document.addEventListener('DOMContentLoaded', function() {
             var quantityInputs = document.querySelectorAll('.quantity-input');
             quantityInputs.forEach(function(quantityInput) {
-                quantityInput.addEventListener('change', function(event) {
+                quantityInput.addEventListener('input', function(event) {
                     var quantity = event.target.value;
                     var addToCartButton = event.target.parentNode.querySelector('.add-to-cart-button');
                     addToCartButton.setAttribute('data-quantity', quantity);
