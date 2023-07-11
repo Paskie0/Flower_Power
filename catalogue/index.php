@@ -74,7 +74,7 @@ include_once '../functions/initialize.php';
             const productId = event.target.getAttribute('data-product-id');
 
             // Send a request to the server to add the product to the cart
-            fetch('add-to-cart.php', {
+            fetch('../functions/add-to-cart.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
