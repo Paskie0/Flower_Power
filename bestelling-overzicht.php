@@ -128,7 +128,6 @@
             <a><i class="fa-brands fa-instagram fa-xl"></i></a>
         </div>
     </footer>
-    <script src="./js/scripts.js"></script>
 </body>
 
 </html>

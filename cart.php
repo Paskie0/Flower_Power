@@ -25,7 +25,6 @@ include_once 'get-cart-items.php';
     </ul>
     <a href="checkout.php" class="btn btn-primary m-4">Bestellen</a>
     <?php include './components/footer.php'; ?>
-    <script src="./js/scripts.js"></script>
 </body>
 
 </html>

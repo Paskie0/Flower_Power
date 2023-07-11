@@ -19,7 +19,6 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
     <?php include './components/header.php'; ?>
     <h1 class="text-7xl">Bedankt voor je bestelling!</h1>
     <?php include './components/footer.php'; ?>
-    <script src="../js/script.js"></script>
 </body>
 
 </html>

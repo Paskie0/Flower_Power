@@ -54,7 +54,6 @@ include_once 'checkout-logic.php';
         <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Bestelling afronden</button>
     </form>
     <?php include './components/footer.php'; ?>
-    <script src="./js/scripts.js"></script>
 </body>
 
 </html>

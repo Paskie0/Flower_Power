@@ -200,7 +200,6 @@ include_once 'account-info.php';
         </ul>
     </main>
     <?php include './components/footer.php'; ?>
-    <script src="./js/script.js"></script>
 </body>
 
 </html>

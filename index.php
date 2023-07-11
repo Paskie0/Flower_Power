@@ -89,7 +89,6 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
         </div>
     </div>
     <?php include './components/footer.php'; ?>
-    <script src="./js/scripts.js"></script>
 </body>
 
 </html>

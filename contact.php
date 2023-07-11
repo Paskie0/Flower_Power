@@ -47,7 +47,6 @@ $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
         </div>
     </div>
     <?php include './components/footer.php'; ?>
-    <script src="./js/script.js"></script>
 </body>
 
 </html>
