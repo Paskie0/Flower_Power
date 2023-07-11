@@ -18,6 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo '<script type="text/javascript">';
         echo 'alert("' . $succesMessage . '");';
         echo '</script>';
+        header("Location: /Flower-Power/index.php");
+        exit();
     } else {
         $errorMessage = "Fout wachtwoord of emailadres";
 
