@@ -1,7 +1,4 @@
 <?php
-session_start();
-include_once '../connect.php';
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         header('HTTP/1.1 401 Unauthorized');

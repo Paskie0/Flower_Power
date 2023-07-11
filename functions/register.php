@@ -1,6 +1,4 @@
 <?php
-include_once 'connect.php';
-
 $email = $_POST['email-register'];
 $password = $_POST['password-register'];
 $firstName = $_POST['first-name'];

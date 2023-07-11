@@ -1,6 +1,5 @@
 <?php
-session_start();
-$isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
+include_once './functions/initialize.php';
 ?>
 
 <!DOCTYPE html>

@@ -1,6 +1,4 @@
 <?php
-include_once 'connect.php';
-
 $query = "SELECT * FROM bestellingen";
 $result = mysqli_query($conn, $query);
 

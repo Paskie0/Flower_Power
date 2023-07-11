@@ -1,7 +1,4 @@
 <?php
-session_start();
-include_once 'connect.php';
-
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: login.php');
     exit;
