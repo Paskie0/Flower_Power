@@ -15,12 +15,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_id'] = $row['klant_id'];
         $_SESSION['username'] = $row['klant_email'];
         header("Location: /Flower-Power/index.php");
-        exit();
         $succesMessage = "Ingelogd!";
         echo '<script type="text/javascript">';
         echo 'alert("' . $succesMessage . '");';
         echo 'window.location.href = "/Flower-Power/index.php";';
         echo '</script>';
+        exit();
     } else {
         $errorMessage = "Fout wachtwoord of emailadres";
 
