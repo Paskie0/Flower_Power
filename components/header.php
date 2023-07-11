@@ -48,11 +48,11 @@
                 <?php if ($isLoggedIn || $isMedewerker) : ?>
                     <a href="/Flower-Power/account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Account</a>
                     <a href="/Flower-Power/medewerker-account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Medewerker</a>
-                    <form action="logout.php" method="post">
+                    <form action="/Flower-Power/functions/logout.php" method="post">
                         <button type="submit" class="btn btn-wide btn-sm mt-2 no-animation">Uitloggen</button>
                     </form>
                 <?php else : ?>
-                    <form action="login.php" method="post" tabindex="0" id="login" autocomplete="off">
+                    <form action="/Flower-Power/functions/login.php" method="post" tabindex="0" id="login" autocomplete="off">
                         <label for="email" class="font-semibold py-1">Email:</label>
                         <input type="email" id="email-login" name="email-login" autocomplete="email" required class="input input-bordered w-full">
 
@@ -61,7 +61,7 @@
 
                         <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Login</button>
                     </form>
-                    <form action="register.php" method="post" tabindex="0" id="register" class="hidden">
+                    <form action="/Flower-Power/functions/register.php" method="post" tabindex="0" id="register" class="hidden">
                         <label for="email-register" class="font-semibold py-4">Email:</label>
                         <input type="email" id="email-register" name="email-register" autocomplete="email" required class="input input-bordered w-full">
 
@@ -82,7 +82,7 @@
 
                         <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Registreren</button>
                     </form>
-                    <form action="medewerker-login.php" method="post" tabindex="0" id="medewerker-login" autocomplete="off" class="hidden">
+                    <form action="/Flower-Power/functions/medewerker-login.php" method="post" tabindex="0" id="medewerker-login" autocomplete="off" class="hidden">
                         <label for="email" class="font-semibold py-1">Email:</label>
                         <input type="email" id="medewerker-email" name="medewerker-email" autocomplete="email" required class="input input-bordered w-full">
 
