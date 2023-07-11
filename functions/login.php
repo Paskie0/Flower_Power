@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo '<script type="text/javascript">';
         echo 'alert("' . $message . '");';
-        echo 'window.location.href = "/Flower-Power/index.php";';
+        echo 'history.back()';
         echo '</script>';
     }
     $conn->close();

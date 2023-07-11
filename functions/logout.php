@@ -1,5 +1,9 @@
 <?php
 session_start();
 session_destroy();
-header("Location: /Flower-Power/index.php");
+$succesMessage = "Ingelogd!";
+echo '<script type="text/javascript">';
+echo 'alert("' . $succesMessage . '");';
+echo 'history.back()';
+echo '</script>';
 exit();
