@@ -1,6 +1,6 @@
 <?php
 include_once './functions/initialize.php';
-include_once 'get-cart-items.php';
+include_once './functions/get-cart-items.php';
 ?>
 
 <!DOCTYPE html>

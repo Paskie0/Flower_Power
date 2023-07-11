@@ -1,6 +1,6 @@
 <?php
 include_once './functions/initialize.php';
-include_once 'checkout-logic.php';
+include_once './functions/checkout-logic.php';
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ include_once 'checkout-logic.php';
         ?>
     </ul>
     <h2>Totaal: €<?php echo $totalPrice; ?></h2>
-    <form action="process-checkout.php" method="post" class="p-4">
+    <form action="./functions/process-checkout.php" method="post" class="p-4">
         <label for="klant_straatnaam" class="font-semibold py-1">Straatnaam:</label>
         <input type="text" id="klant_straatnaam" name="klant_straatnaam" required class="input input-bordered w-full">
 

@@ -42,5 +42,5 @@ $insertQuery = "INSERT INTO bestellingen (klant_id, bestelling_datum, bestelling
                 VALUES ('$userId', NOW(), '$totalAmount')";
 mysqli_query($conn, $insertQuery);
 mysqli_close($conn);
-header('Location: complete.php');
+header('Location: /Flower-Power/complete.php');
 exit;

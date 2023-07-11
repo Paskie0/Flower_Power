@@ -23,7 +23,7 @@ include_once './functions/initialize.php';
                 <span class="hidden md:inline normal-case">Product toevoegen</span>
             </label>
             <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
-                <form action="add-product.php" method="post" tabindex="0" id="login" autocomplete="off">
+                <form action="./functions/add-product.php" method="post" tabindex="0" id="login" autocomplete="off">
 
                     <label for="product_naam" class="font-semibold py-1">Product Name:</label>
                     <input type="text" id="product_naam" name="product_naam" required class="input input-bordered w-full"><br>
@@ -103,7 +103,7 @@ include_once './functions/initialize.php';
 
                     $.ajax({
                         method: 'POST',
-                        url: 'update-product.php',
+                        url: './functions/update-product.php',
                         data: {
                             productId: productId,
                             productName: productName,

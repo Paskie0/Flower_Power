@@ -15,5 +15,5 @@ if ($conn->query($sql) === true) {
 }
 
 $conn->close();
-header("Location: index.php");
+header("Location: /Flower-Power/index.php");
 exit();

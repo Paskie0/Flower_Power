@@ -16,7 +16,7 @@ include_once './functions/initialize.php';
 <body>
     <?php include './components/header.php'; ?>
     <h1>Bestellingen:</h1>
-    <?php include 'get-orders.php'; ?>
+    <?php include './functions/get-orders.php'; ?>
     <?php include './components/footer.php'; ?>
 </body>
 

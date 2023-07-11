@@ -15,5 +15,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo 'Error adding product.';
     }
 }
-header("Location: product-overview.php");
+header("Location: /Flower-Power/product-overview.php");
 mysqli_close($conn);
