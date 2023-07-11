@@ -1,18 +1,26 @@
 const themeSwitcher = document.querySelector("#theme-switcher");
-themeSwitcher.addEventListener("change", () => {
+themeSwitcher.addEventListener("change", function () {
   document.documentElement.setAttribute("data-theme", themeSwitcher.checked ? "retro" : "halloween");
 });
 
 function toggleForms() {
-  document.querySelector("#login").classList.toggle("hidden");
-  document.querySelector("#register").classList.toggle("hidden");
-  if (document.querySelector("#login").classList.contains("hidden"))
-    document.querySelector("#toggleFormsButton").innerHTML = "Login";
-  else document.querySelector("#toggleFormsButton").innerHTML = "Registreren";
+  const login = document.querySelector("#login");
+  const register = document.querySelector("#register");
+  const toggleFormsButton = document.querySelector("#toggleFormsButton");
+  login.classList.toggle("hidden");
+  register.classList.toggle("hidden");
+  if (login.classList.contains("hidden")) {
+    toggleFormsButton.innerHTML = "Login";
+  } else {
+    toggleFormsButton.innerHTML = "Registreren";
+  }
 }
 
 function medewerkerForm() {
-  document.querySelector("#medewerker-login").classList.toggle("hidden");
-  document.querySelector("#login").classList.toggle("hidden");
-  document.querySelector("#medewerkerFormButton").classList.toggle("btn-primary");
+  const medewerkerLogin = document.querySelector("#medewerker-login");
+  const login = document.querySelector("#login");
+  const medewerkerFormButton = document.querySelector("#medewerkerFormButton");
+  medewerkerLogin.classList.toggle("hidden");
+  login.classList.toggle("hidden");
+  medewerkerFormButton.classList.toggle("btn-primary");
 }
