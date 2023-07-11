@@ -10,7 +10,7 @@
                 <li>
                     <a>Collecties</a>
                     <ul class="p-2">
-                        <li><a href="/Flower-Power/product-overview.php">Bloemen</a></li>
+                        <li><a href="/Flower-Power/catalogue/index.php">Bloemen</a></li>
                     </ul>
                 </li>
             </ul>
@@ -28,7 +28,7 @@
                 <details>
                     <summary>Collecties</summary>
                     <ul class="p-2">
-                        <li><a href="/Flower-Power/product-overview.php">Bloemen</a></li>
+                        <li><a href="/Flower-Power/catalogue/index.php">Bloemen</a></li>
                     </ul>
                 </details>
             </li>
