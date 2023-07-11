@@ -5,8 +5,11 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
 include_once 'connect.php';
 
 if (!$isLoggedIn) {
-    header('Location: login.php');
-    exit();
+    $message = "U moet eerst inloggen!";
+    echo '<script type="text/javascript">';
+    echo 'alert("' . $message . '");';
+    echo 'history.back()';
+    echo '</script>';
 }
 
 $userId = $_SESSION['user_id'];
