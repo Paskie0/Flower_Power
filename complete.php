@@ -16,9 +16,9 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
 </head>
 
 <body>
-    <?php include './components/header.php'; ?>
+    <?php include '/Flower-Power/components/header.php'; ?>
     <h1 class="text-7xl">Bedankt voor je bestelling!</h1>
-    <?php include './components/footer.php'; ?>
+    <?php include '/Flower-Power/components/footer.php'; ?>
 </body>
 
 </html>

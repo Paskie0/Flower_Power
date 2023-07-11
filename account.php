@@ -71,7 +71,7 @@ include_once 'account-info.php';
 </head>
 
 <body>
-    <?php include './components/header.php'; ?>
+    <?php include '/Flower-Power/components/header.php'; ?>
     <h1 class="pt-4 text-4xl font-bold text-center">Account informatie</h1>
     <div class="divider"></div>
     <main class="p-6">
@@ -199,7 +199,7 @@ include_once 'account-info.php';
             ?>
         </ul>
     </main>
-    <?php include './components/footer.php'; ?>
+    <?php include '/Flower-Power/components/footer.php'; ?>
 </body>
 
 </html>

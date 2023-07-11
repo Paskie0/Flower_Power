@@ -16,7 +16,7 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
 </head>
 
 <body>
-    <?php include './components/header.php'; ?>
+    <?php include '/Flower-Power/components/header.php'; ?>
     <div class="hero min-h-screen" style="background-image: url(./img/bouquet-showcase.jpg);">
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-white">
@@ -88,7 +88,7 @@ $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMed
             </div>
         </div>
     </div>
-    <?php include './components/footer.php'; ?>
+    <?php include '/Flower-Power/components/footer.php'; ?>
 </body>
 
 </html>
