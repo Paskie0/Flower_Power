@@ -1,4 +1,4 @@
 <?php
 session_destroy();
-header("Location: /Flower-Power/index.php");
+header("Location: ../index.php");
 exit();
