@@ -8,4 +8,4 @@
         <a><i class="fa-brands fa-instagram fa-xl"></i></a>
     </div>
 </footer>
-<script src="/Flower-Power/js/script.js"></script>
+<script src="/Flower-Power/js/scripts.js"></script>
