@@ -9,10 +9,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $productId = $_POST['productId'];
-
-
     $userId = $_SESSION['user_id'];
-    $query = "INSERT INTO winkelwagen (klant_id, artikel_id) VALUES ('$userId', '$productId')";
+    $quantity = $_POST['quantity']; // Get the selected quantity from the request
+
+    $query = "INSERT INTO winkelwagen (klant_id, artikel_id, hoeveelheid) VALUES ('$userId', '$productId', '$quantity')";
 
     if (mysqli_query($conn, $query)) {
         header('HTTP/1.1 200 OK');

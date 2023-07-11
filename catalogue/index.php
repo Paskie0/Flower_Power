@@ -42,6 +42,7 @@ include_once '../functions/initialize.php';
                         <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
                         <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
                         <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
+                        <input type="number" class="quantity-input input input-bordered w-20" value="1" min="1">
                         <button class="add-to-cart-button btn btn-primary btn-sm mt-4 no-animation" data-product-id="<?php echo $productId; ?>">Add to Cart</button>
                     </div>
                 </div>
@@ -96,6 +97,19 @@ include_once '../functions/initialize.php';
                     console.error('An error occurred:', error);
                 });
         }
+    </script>
+    <script>
+        // JavaScript code for quantity selector and Add to Cart button
+        document.addEventListener('DOMContentLoaded', function() {
+            var quantityInputs = document.querySelectorAll('.quantity-input');
+            quantityInputs.forEach(function(quantityInput) {
+                quantityInput.addEventListener('change', function(event) {
+                    var quantity = event.target.value;
+                    var addToCartButton = event.target.parentNode.querySelector('.add-to-cart-button');
+                    addToCartButton.setAttribute('data-quantity', quantity);
+                });
+            });
+        });
     </script>
 </body>
 
