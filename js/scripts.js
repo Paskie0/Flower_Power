@@ -1,6 +1,11 @@
 const themeSwitcher = document.querySelector("#theme-switcher");
+const currentTheme = localStorage.getItem("theme") || "halloween";
+document.documentElement.setAttribute("data-theme", currentTheme);
+themeSwitcher.checked = currentTheme === "retro";
 themeSwitcher.addEventListener("change", function () {
-  document.documentElement.setAttribute("data-theme", themeSwitcher.checked ? "retro" : "halloween");
+  const newTheme = themeSwitcher.checked ? "retro" : "halloween";
+  document.documentElement.setAttribute("data-theme", newTheme);
+  localStorage.setItem("theme", newTheme);
 });
 
 function toggleForms() {
