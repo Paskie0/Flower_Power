@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $succesMessage = "Ingelogd!";
         echo '<script type="text/javascript">';
         echo 'alert("' . $succesMessage . '");';
+        echo 'history.back()';
         echo '</script>';
     } else {
         $errorMessage = "Fout wachtwoord of emailadres";
