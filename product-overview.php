@@ -131,6 +131,29 @@ if (!isset($_SESSION['loggedinMedewerker']) || $_SESSION['loggedinMedewerker'] !
                     productContainer.find('.edit-button').removeClass('hidden');
                 });
             });
+            $(document).ready(function() {
+                $('.delete-button').on('click', function() {
+                    var productId = $(this).data('product-id');
+                    var productContainer = $(this).closest('.product-item');
+
+                    $.ajax({
+                        method: 'POST',
+                        url: './functions/delete-product.php',
+                        data: {
+                            productId: productId
+                        },
+                        success: function(response) {
+                            console.log('Product deleted successfully.');
+
+                            // Optionally, remove the deleted product from the UI
+                            productContainer.remove();
+                        },
+                        error: function(xhr, status, error) {
+                            console.log('Error deleting product:', error);
+                        }
+                    });
+                });
+            });
         </script>
     </div>
     <?php include './components/footer.php'; ?>
