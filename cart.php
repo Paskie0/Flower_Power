@@ -2,31 +2,16 @@
 include_once './functions/initialize.php';
 include_once './functions/get-cart-items.php';
 
-// Check if the deleteItemId is set
-if (isset($_POST['deleteItemId'])) {
+// Check if the form is submitted and the item ID is provided
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteItemId'])) {
+    $itemId = $_POST['deleteItemId'];
 
-    $servername = "localhost";
-    $username = "u597563256_Pascal";
-    $password = "3Lf6aR3s";
-    $dbname = "u597563256_Flower_Power";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    // Get the deleteItemId from the POST array
-    $deleteItemId = $_POST['deleteItemId'];
-
-    // Perform the deletion by executing a DELETE query
-    $deleteQuery = "DELETE FROM winkelwagen WHERE artikel_id = '$deleteItemId' AND klant_id = '$userId'";
-
-    if (mysqli_query($conn, $deleteQuery)) {
-        // Deletion successful, refresh the page
-        header('Location: cart.php');
-        exit();
-    } else {
-        // Error occurred during deletion
-        echo 'Failed to delete the item from the cart.';
+    // Loop through the cart items and remove the item with the matching ID
+    foreach ($cartItems as $key => $item) {
+        if ($item['artikel_id'] === $itemId) {
+            unset($cartItems[$key]);
+            break;
+        }
     }
 }
 ?>
