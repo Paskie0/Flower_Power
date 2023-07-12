@@ -7,13 +7,17 @@ if (isset($_POST['deleteItemId'])) {
     // Get the deleteItemId from the POST array
     $deleteItemId = $_POST['deleteItemId'];
 
-    // Perform your delete operation here using the $deleteItemId
-    // ...
-    // ...
+    // Perform the deletion by executing a DELETE query
+    $deleteQuery = "DELETE FROM winkelwagen WHERE artikel_id = '$deleteItemId' AND klant_id = '$userId'";
 
-    // Redirect or refresh the page after deleting
-    header('Location: cart.php');
-    exit();
+    if (mysqli_query($conn, $deleteQuery)) {
+        // Deletion successful, refresh the page
+        header('Location: cart.php');
+        exit();
+    } else {
+        // Error occurred during deletion
+        echo 'Failed to delete the item from the cart.';
+    }
 }
 ?>
 
