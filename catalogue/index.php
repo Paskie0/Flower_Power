@@ -80,33 +80,21 @@ include_once '../functions/initialize.php';
                             if (xhr.status === 200) {
                                 console.log('Product added to cart successfully');
                                 //create alert to show product is added to cart
-                                var modal = document.createElement('div');
-                                modal.classList.add('modal', 'modal-active');
-                                modal.innerHTML = `
-                                    <div class="modal-overlay"></div>
-                                    <div class="modal-container">
-                                        <div class="modal-header">
-                                            <button class="btn btn-square btn-ghost btn-lg modal-close">
-                                                <i class="fas fa-times"></i>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p class="text-lg font-bold">Product added to cart successfully</p>
+                                var alert = document.createElement('div');
+                                alert.classList.add('modal', 'modal-open', 'p-4', 'bg-base-200');
+                                alert.innerHTML = `
+                                    <div class="modal-box">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h3 class="text-lg font-medium">Product added to cart successfully</h3>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-primary btn-sm" onclick="document.querySelector('.modal').classList.remove('modal-open')">OK</button>
+                                            </div>
                                         </div>
                                     </div>
                                 `;
-                                document.body.appendChild(modal);
-
-                                // Close modal when close button or overlay is clicked
-                                modal.querySelector('.modal-close').addEventListener('click', function() {
-                                    modal.remove();
-                                });
-                                modal.querySelector('.modal-overlay').addEventListener('click', function() {
-                                    modal.remove();
-                                });
-                                setTimeout(function() {
-                                    alert.remove();
-                                }, 3000);
+                                document.body.appendChild(alert);
                             } else {
                                 console.log('Error adding product to cart');
                             }
