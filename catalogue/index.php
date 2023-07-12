@@ -62,51 +62,29 @@ include_once '../functions/initialize.php';
     </div>
     <?php include '../components/footer.php'; ?>
     <script>
-        // Get all "Add to Cart" buttons
-        const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
-
-        // Attach click event listener to each button
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', addToCart);
-        });
-
-        // Function to handle the "Add to Cart" button click
-        function addToCart(event) {
-            const productId = event.target.getAttribute('data-product-id');
-
-            // Send a request to the server to add the product to the cart
-            fetch('../functions/add-to-cart.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: 'productId=' + encodeURIComponent(productId),
-                })
-                .then(response => {
-                    // Handle the response from the server
-                    if (response.ok) {
-                        // Product added successfully
-                        console.log('Product added to cart.');
-                    } else {
-                        // Error occurred while adding the product
-                        console.error('Failed to add product to cart.');
-                    }
-                })
-                .catch(error => {
-                    // Handle any network or fetch API errors
-                    console.error('An error occurred:', error);
-                });
-        }
-    </script>
-    <script>
         // JavaScript code for quantity selector and Add to Cart button
         document.addEventListener('DOMContentLoaded', function() {
-            var quantityInputs = document.querySelectorAll('.quantity-input');
-            quantityInputs.forEach(function(quantityInput) {
-                quantityInput.addEventListener('input', function(event) {
-                    var quantity = event.target.value;
-                    var addToCartButton = event.target.parentNode.querySelector('.add-to-cart-button');
-                    addToCartButton.dataset.quantity = quantity; // Update the dataset value
+            var addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+            addToCartButtons.forEach(function(addToCartButton) {
+                addToCartButton.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    var quantityInput = event.target.parentNode.querySelector('.quantity-input');
+                    var quantity = quantityInput.value;
+                    var productId = addToCartButton.dataset.productId;
+
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'add_to_cart.php', true);
+                    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === XMLHttpRequest.DONE) {
+                            if (xhr.status === 200) {
+                                console.log('Product added to cart successfully');
+                            } else {
+                                console.log('Error adding product to cart');
+                            }
+                        }
+                    };
+                    xhr.send('productId=' + encodeURIComponent(productId) + '&quantity=' + encodeURIComponent(quantity));
                 });
             });
         });
