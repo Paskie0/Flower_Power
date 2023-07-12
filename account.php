@@ -76,7 +76,7 @@ include_once './functions/account-info.php';
             <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Email</h2>
+                        <h2 class="text-lg font-semibold">klant_email</h2>
                         <p class="text-gray-500">' . $email . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
@@ -87,7 +87,7 @@ include_once './functions/account-info.php';
             <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Voornaam</h2>
+                        <h2 class="text-lg font-semibold">klant_voornaam</h2>
                         <p class="text-gray-500">' . $firstName . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
@@ -98,7 +98,7 @@ include_once './functions/account-info.php';
             <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Tussenvoegsel</h2>
+                        <h2 class="text-lg font-semibold">klant_tussenvoegsel</h2>
                         <p class="text-gray-500">' . $infix . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
@@ -109,7 +109,7 @@ include_once './functions/account-info.php';
             <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Achternaam</h2>
+                        <h2 class="text-lg font-semibold">klant_achternaam</h2>
                         <p class="text-gray-500">' . $lastName . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
@@ -120,7 +120,7 @@ include_once './functions/account-info.php';
             <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Wachtwoord</h2>
+                        <h2 class="text-lg font-semibold">klant_wachtwoord</h2>
                         <p class="text-gray-500">' . $password . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
@@ -131,7 +131,7 @@ include_once './functions/account-info.php';
             <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Email</h2>
+                        <h2 class="text-lg font-semibold">klant_geboortedatum</h2>
                         <p class="text-gray-500">' . $dateOfBirth . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
@@ -142,7 +142,7 @@ include_once './functions/account-info.php';
             <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Straatnaam</h2>
+                        <h2 class="text-lg font-semibold">klant_straatnaam</h2>
                         <p class="text-gray-500">' . $street . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
@@ -153,7 +153,7 @@ include_once './functions/account-info.php';
             <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Huisnummer</h2>
+                        <h2 class="text-lg font-semibold">klant_huisnummer</h2>
                         <p class="text-gray-500">' . $houseNumber . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
@@ -164,7 +164,7 @@ include_once './functions/account-info.php';
             <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Postcode</h2>
+                        <h2 class="text-lg font-semibold">klant_postcode</h2>
                         <p class="text-gray-500">' . $postcode . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
@@ -175,7 +175,7 @@ include_once './functions/account-info.php';
             <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Plaats</h2>
+                        <h2 class="text-lg font-semibold">klant_plaats</h2>
                         <p class="text-gray-500">' . $city . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
@@ -186,7 +186,7 @@ include_once './functions/account-info.php';
             <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">Telefoon</h2>
+                        <h2 class="text-lg font-semibold">klant_telefoon</h2>
                         <p class="text-gray-500">' . $phone . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
