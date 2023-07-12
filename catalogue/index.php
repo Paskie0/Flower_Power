@@ -80,10 +80,30 @@ include_once '../functions/initialize.php';
                             if (xhr.status === 200) {
                                 console.log('Product added to cart successfully');
                                 //create alert to show product is added to cart
-                                var alert = document.createElement('div');
-                                alert.classList.add('modal', 'modal-open', 'p-4', 'bg-base-200');
-                                alert.innerHTML = 'Product added to cart successfully';
-                                document.body.appendChild(alert);
+                                var modal = document.createElement('div');
+                                modal.classList.add('modal', 'modal-active');
+                                modal.innerHTML = `
+                                    <div class="modal-overlay"></div>
+                                    <div class="modal-container">
+                                        <div class="modal-header">
+                                            <button class="btn btn-square btn-ghost btn-lg modal-close">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="text-lg font-bold">Product added to cart successfully</p>
+                                        </div>
+                                    </div>
+                                `;
+                                document.body.appendChild(modal);
+
+                                // Close modal when close button or overlay is clicked
+                                modal.querySelector('.modal-close').addEventListener('click', function() {
+                                    modal.remove();
+                                });
+                                modal.querySelector('.modal-overlay').addEventListener('click', function() {
+                                    modal.remove();
+                                });
                                 setTimeout(function() {
                                     alert.remove();
                                 }, 3000);
