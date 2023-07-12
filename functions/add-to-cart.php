@@ -15,8 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query = "INSERT INTO winkelwagen (klant_id, artikel_id, hoeveelheid) VALUES ('$userId', '$productId', '$quantity')";
 
     if (mysqli_query($conn, $query)) {
-        header('HTTP/1.1 200 OK');
-        exit();
+        $succesMessage = 'Product is toegevoegd aan winkelwagen';
+        echo '<script type="text/javascript">';
+        echo 'alert("' . $succesMessage . '");';
+        echo 'window.reload();';
+        echo '</script>';
     } else {
         header('HTTP/1.1 500 Internal Server Error');
         exit();
