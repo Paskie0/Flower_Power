@@ -76,7 +76,8 @@ include_once './functions/account-info.php';
             <?php echo '<li class="bg-transparent rounded-lg shadow-md p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex-grow">
-                        <h2 class="text-lg font-semibold">klant_email</h2>
+                        <h2 class="hidden">klant_email</h2>
+                        <h2 class="text-lg font-semibold">Email</h2>
                         <p class="text-gray-500">' . $email . '</p>
                     </div>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg edit-btn">Edit</button>
