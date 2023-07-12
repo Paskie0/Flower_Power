@@ -18,18 +18,21 @@ include_once './functions/initialize.php';
     <h1 class="pt-4 text-4xl font-bold text-center">Admin Dashboard</h1>
     <div class="divider"></div>
     <div class="grid grid-cols-3 gap-4">
-        <a href="#" class="card bg-base-200 shadow-lg rounded-lg overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-            <h2>Flower Arrangements</h2>
-            <p>View our beautiful flower arrangements</p>
-        </a>
-        <a href="#" class="card bg-base-200 shadow-lg rounded-lg overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-            <h2>Plants</h2>
-            <p>Explore our collection of plants</p>
-        </a>
-        <a href="#" class="card bg-base-200 shadow-lg rounded-lg overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-            <h2>Gifts</h2>
-            <p>Find the perfect gift for any occasion</p>
-        </a>
+        <div class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all">
+            <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
+            <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
+            <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
+        </div>
+        <div class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all">
+            <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
+            <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
+            <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
+        </div>
+        <div class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all">
+            <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
+            <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
+            <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
+        </div>
     </div>
     <?php include './components/footer.php'; ?>
 </body>
