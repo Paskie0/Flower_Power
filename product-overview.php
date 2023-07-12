@@ -34,15 +34,15 @@ if (!isset($_SESSION['loggedinMedewerker']) || $_SESSION['loggedinMedewerker'] !
             <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
                 <form action="./functions/add-product.php" method="post" tabindex="0" id="login" autocomplete="off">
 
-                    <label for="product_naam" class="font-semibold py-1">Product Name:</label>
+                    <label for="product_naam" class="font-semibold py-1">Product Naam:</label>
                     <input type="text" id="product_naam" name="product_naam" required class="input input-bordered w-full"><br>
 
-                    <label for="product_prijs" class="font-semibold py-1">Product Price:</label>
+                    <label for="product_prijs" class="font-semibold py-1">Product Prijs:</label>
                     <input type="number" id="product_prijs" name="product_prijs" required class="input input-bordered w-full"><br>
 
-                    <label for="product_beschrijving" class="font-semibold py-1">Product Description:</label>
+                    <label for="product_beschrijving" class="font-semibold py-1">Product Beschrijving:</label>
                     <textarea id="product_beschrijving" name="product_beschrijving" class="textarea textarea-bordered w-full" required></textarea><br>
-                    <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Toevoegen</button>
+                    <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 h-full no-animation">Toevoegen</button>
                 </form>
             </div>
         </div>
