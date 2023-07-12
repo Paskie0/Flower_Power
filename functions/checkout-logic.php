@@ -19,7 +19,7 @@ $result = mysqli_query($conn, $query);
 $totalPrice = 0;
 while ($row = mysqli_fetch_assoc($result)) {
     $productPrice = $row['artikel_prijs'];
-    $quantity = 1;
+    $quantity = $row['hoeveelheid'];
     $subtotal = $productPrice * $quantity;
     $totalPrice += $subtotal;
 }
