@@ -17,17 +17,8 @@ include_once './functions/initialize.php';
     <?php include './components/header.php'; ?>
     <h1 class="pt-4 text-4xl font-bold text-center">Admin Dashboard</h1>
     <div class="divider"></div>
-    <div class="grid grid-cols-3 gap-4">
-        <div class="card w-fit bg-base-100 shadow-xl max-w-xs">
-            <div class="card-body max-w-fit">
-                <h2 class="card-title">Card title!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Buy Now</button>
-                </div>
-            </div>
-        </div>
-        <div class="card w-fit bg-base-100 shadow-xl">
+    <div class=" gap-4 flex">
+        <div class="card w-96 bg-base-200 shadow-xl">
             <div class="card-body">
                 <h2 class="card-title">Card title!</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
@@ -36,7 +27,16 @@ include_once './functions/initialize.php';
                 </div>
             </div>
         </div>
-        <div class="card w-fit bg-base-100 shadow-xl">
+        <div class="card w-fit bg-base-200 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title">Card title!</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="card w-fit bg-base-200 shadow-xl">
             <div class="card-body">
                 <h2 class="card-title">Card title!</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
