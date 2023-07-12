@@ -34,7 +34,7 @@ mysqli_query($conn, $updateQuery);
 $totalAmount = 0;
 while ($row = mysqli_fetch_assoc($result)) {
     $productPrice = $row['artikel_prijs'];
-    $quantity = 1;
+    $quantity = $row['hoeveelheid'];
     $totalAmount += $productPrice * $quantity;
 }
 
