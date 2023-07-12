@@ -1,6 +1,7 @@
 <?php
 include_once './functions/initialize.php';
 include_once './functions/get-cart-items.php';
+include_once './functions/connect.php'; // Move this line here
 
 if (isset($_POST['deleteItemButton'])) {
     $deleteItemId = $_POST['deleteItemId'];
