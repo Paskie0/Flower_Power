@@ -35,10 +35,6 @@
             <span class="hidden md:inline normal-case">Contact</span>
         </a>
         <details class="dropdown dropdown-end drop-shadow-lg">
-            <label tabindex="0" class="btn btn-ghost flex flex-col">
-                <i class="fa-solid fa-user fa-xl"></i>
-                <span class="hidden md:inline normal-case">Account</span>
-            </label>
             <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
                 <?php if ($isLoggedIn || $isMedewerker) : ?>
                     <a href="/Flower-Power/account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Account</a>
@@ -91,6 +87,10 @@
                 <?php endif; ?>
             </div>
         </details>
+        <label tabindex="0" class="btn btn-ghost flex flex-col">
+            <i class="fa-solid fa-user fa-xl"></i>
+            <span class="hidden md:inline normal-case">Account</span>
+        </label>
         <a href="/Flower-Power/cart.php" role="button" class="btn btn-ghost flex flex-col">
             <div class="indicator">
                 <span class="indicator-item badge badge-secondary" id="cartCountIndicator">0</span>
