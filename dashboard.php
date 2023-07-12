@@ -18,20 +18,32 @@ include_once './functions/initialize.php';
     <h1 class="pt-4 text-4xl font-bold text-center">Admin Dashboard</h1>
     <div class="divider"></div>
     <div class="grid grid-cols-3 gap-4">
-        <div class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all">
-            <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
-            <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
-            <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
+        <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title">Card title!</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Buy Now</button>
+                </div>
+            </div>
         </div>
-        <div class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all">
-            <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
-            <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
-            <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
+        <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title">Card title!</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Buy Now</button>
+                </div>
+            </div>
         </div>
-        <div class="block bg-gray-800 rounded-lg shadow-md p-4 hover:scale-95 transition-all">
-            <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
-            <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
-            <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
+        <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title">Card title!</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Buy Now</button>
+                </div>
+            </div>
         </div>
     </div>
     <?php include './components/footer.php'; ?>
