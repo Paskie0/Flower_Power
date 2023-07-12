@@ -46,13 +46,13 @@ mysqli_close($conn);
     <h1 class="pt-4 text-4xl font-bold text-center">Bedankt voor je bestelling!</h1>
     <div class="divider"></div>
     <?php if ($order) : ?>
-        <table>
+        <table class="table table-bordered table-striped w-full">
             <thead>
                 <tr>
-                    <th>Bestel nr.</th>
-                    <th>Klant nr.</th>
-                    <th>Totaal</th>
-                    <th>Datum</th>
+                    <th class="text-left">Bestel nr.</th>
+                    <th class="text-left">Klant nr.</th>
+                    <th class="text-left">Totaal</th>
+                    <th class="text-left">Datum</th>
                 </tr>
             </thead>
             <tbody>
