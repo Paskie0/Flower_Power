@@ -4,7 +4,20 @@ include_once './functions/get-cart-items.php';
 
 // Check if the form is submitted and the item ID is provided
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteItemId'])) {
+    $servername = "localhost";
+    $username = "u597563256_Pascal";
+    $password = "3Lf6aR3s";
+    $dbname = "u597563256_Flower_Power";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
     $itemId = $_POST['deleteItemId'];
+
+    // Delete the item from the database
+    $deleteQuery = "DELETE FROM winkelwagen WHERE artikel_id = '$itemId' AND klant_id = '$userId'";
+    mysqli_query($conn, $deleteQuery);
 
     // Loop through the cart items and remove the item with the matching ID
     foreach ($cartItems as $key => $item) {
