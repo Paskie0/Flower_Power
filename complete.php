@@ -17,7 +17,9 @@ include_once './functions/initialize.php';
     <?php include './components/header.php'; ?>
     <h1 class="pt-4 text-4xl font-bold text-center">Bedankt voor je bestelling!</h1>
     <div class="divider"></div>
-    <button id="createPdfButton" class="btn btn-primary">Create PDF</button>
+    <div class="text-center">
+        <button id="createPdfButton" class="btn btn-primary">Create PDF</button>
+    </div>
     <?php include './components/footer.php'; ?>
 
     <script>
