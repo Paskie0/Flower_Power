@@ -30,6 +30,14 @@
         </ul>
     </div>
     <div class="navbar-end">
+        <?php
+        if (isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMedewerker'] === true) {
+            echo '<a href="/Flower-Power/dashboard.php" role="button" class="btn btn-ghost flex flex-col">
+                    <i class="fa-solid fa-gear fa-xl"></i>
+                    <span class="hidden md:inline normal-case">Contact</span>
+                  </a>';
+        }
+        ?>
         <a href="/Flower-Power/contact.php" role="button" class="btn btn-ghost flex flex-col">
             <i class="fa-solid fa-address-card fa-xl"></i>
             <span class="hidden md:inline normal-case">Contact</span>
