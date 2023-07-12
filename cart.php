@@ -26,9 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteItemId'])) {
             break;
         }
     }
-
-    // Update the cart count
-    $cartCount = count($cartItems);
 }
 ?>
 
