@@ -1,9 +1,11 @@
 <?php
 include_once './functions/initialize.php';
 include_once './functions/get-cart-items.php';
-include_once './functions/connect.php'; // Move this line here
 
+// Check if the deleteItemButton is clicked
 if (isset($_POST['deleteItemButton'])) {
+    include_once './functions/connect.php'; // Include connect.php here
+
     $deleteItemId = $_POST['deleteItemId'];
 
     // Query to delete the item from the winkelwagen table
@@ -13,10 +15,17 @@ if (isset($_POST['deleteItemButton'])) {
     if (mysqli_query($conn, $query)) {
         // Deletion successful
         // Redirect or display a success message
+        header('Location: cart.php');
+        exit();
     } else {
-        echo "Error: " . $query . "<br>" . mysqli_error($conn);
+        // Error occurred during deletion
+        // Handle the error accordingly
+        echo 'Failed to delete the item from the cart.';
     }
+
+    mysqli_close($conn); // Close the database connection
 }
+
 ?>
 
 <!DOCTYPE html>

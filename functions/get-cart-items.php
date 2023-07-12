@@ -27,3 +27,5 @@ if ($result && mysqli_num_rows($result) > 0) {
 }
 
 mysqli_free_result($result);
+
+mysqli_close($conn);
