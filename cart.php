@@ -1,7 +1,7 @@
 <?php
 session_start();
-include_once './functions/initialize.php';
 include_once './functions/get-cart-items.php';
+include_once './functions/initialize.php';
 
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
