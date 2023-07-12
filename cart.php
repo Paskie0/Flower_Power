@@ -4,7 +4,6 @@ include_once './functions/get-cart-items.php';
 
 // Check if the deleteItemButton is clicked
 if (isset($_POST['deleteItemButton'])) {
-    include_once './functions/connect.php'; // Include connect.php here
 
     $deleteItemId = $_POST['deleteItemId'];
 

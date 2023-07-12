@@ -29,5 +29,5 @@ if ($result && mysqli_num_rows($result) > 0) {
 
 mysqli_free_result($result);
 
-// Close the database connection
-mysqli_close($conn);
+// Close the database connection (commented out to keep the connection open)
+// mysqli_close($conn);
