@@ -71,9 +71,9 @@ if (!isset($_SESSION['loggedinMedewerker']) || $_SESSION['loggedinMedewerker'] !
                         <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
                     </div>
                     <div class="buttons">
-                        <button class="edit-button" data-product-id="<?php echo $productId; ?>">Edit</button>
-                        <button class="save-button hidden" data-product-id="<?php echo $productId; ?>">Save</button>
-                        <button class="delete-button" data-product-id="<?php echo $productId; ?>">Delete</button>
+                        <button class="btn edit-button" data-product-id="<?php echo $productId; ?>">Edit</button>
+                        <button class="btn btn-success save-button hidden" data-product-id="<?php echo $productId; ?>">Save</button>
+                        <button class="btn btn-warning delete-button" data-product-id="<?php echo $productId; ?>">Delete</button>
                     </div>
                 </div>
         <?php
