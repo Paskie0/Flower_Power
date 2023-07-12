@@ -47,7 +47,7 @@ include_once './functions/medewerker-info.php';
                 // Perform an AJAX request to save the updated content to the database
                 // Modify this code to fit your specific database and server-side logic
                 $.ajax({
-                    url: './functions/update-klanten.php', // Replace with your PHP file to handle the update
+                    url: './functions/update-medewerkers.php', // Replace with your PHP file to handle the update
                     method: 'POST',
                     data: {
                         field: listItem.find('h2').text().trim(), // Specify the field being updated
