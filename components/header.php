@@ -30,8 +30,7 @@
         </ul>
     </div>
     <div class="navbar-end">
-        <?php
-        if (isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMedewerker'] === true) {
+        <?php if ($isMedewerker) {
             echo '<a href="/Flower-Power/dashboard.php" role="button" class="btn btn-ghost flex flex-col">
                     <i class="fa-solid fa-gear fa-xl"></i>
                     <span class="hidden md:inline normal-case">Contact</span>
@@ -40,7 +39,7 @@
         ?>
         <a href="/Flower-Power/contact.php" role="button" class="btn btn-ghost flex flex-col">
             <i class="fa-solid fa-address-card fa-xl"></i>
-            <span class="hidden md:inline normal-case">Contact</span>
+            <span class="hidden md:inline normal-case">Admin</span>
         </a>
         <div class="dropdown dropdown-end drop-shadow-lg">
             <label tabindex="0" class="btn btn-ghost flex flex-col">
@@ -48,9 +47,13 @@
                 <span class="hidden md:inline normal-case">Account</span>
             </label>
             <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
+                <?php if ($isLoggedIn)
+                    echo '<a href="/Flower-Power/account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Account</a>'
+                ?>
+                <?php if ($isMedewerker)
+                    echo  '<a href="/Flower-Power/medewerker-account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Medewerker</a>'
+                ?>
                 <?php if ($isLoggedIn || $isMedewerker) : ?>
-                    <a href="/Flower-Power/account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Account</a>
-                    <a href="/Flower-Power/medewerker-account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Medewerker</a>
                     <form action="/Flower-Power/functions/logout.php" method="post">
                         <button type="submit" class="btn btn-wide btn-sm mt-2 no-animation">Uitloggen</button>
                     </form>
