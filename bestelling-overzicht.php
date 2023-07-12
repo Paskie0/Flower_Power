@@ -2,7 +2,6 @@
 include_once './functions/initialize.php';
 
 if (!isset($_SESSION['loggedinMedewerker']) || $_SESSION['loggedinMedewerker'] !== true) {
-    // Redirect the user to a login page or show an access denied message
     $succesMessage = "U bent niet ingelogd als medewerker";
     echo '<script type="text/javascript">';
     echo 'alert("' . $succesMessage . '");';

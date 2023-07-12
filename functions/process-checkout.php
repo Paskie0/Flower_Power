@@ -2,13 +2,11 @@
 session_start();
 include_once 'connect.php';
 
-// Check if the user is logged in or redirect to the login page if not
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: login.php');
     exit;
 }
 
-// Retrieve the user ID from the session
 $userId = $_SESSION['user_id'];
 
 $query = "SELECT a.artikel_naam, a.artikel_prijs, c.hoeveelheid
@@ -41,7 +39,6 @@ while ($row = mysqli_fetch_assoc($result)) {
 $insertQuery = "INSERT INTO bestellingen (klant_id, bestelling_datum, bestelling_totaal)
                 VALUES ('$userId', NOW(), '$totalAmount')";
 mysqli_query($conn, $insertQuery);
-// Delete all items from the cart for the current user
 $deleteQuery = "DELETE FROM winkelwagen WHERE klant_id = '$userId'";
 mysqli_query($conn, $deleteQuery);
 

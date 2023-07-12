@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $productId = $_POST['productId'];
     $userId = $_SESSION['user_id'];
-    $quantity = $_POST['quantity']; // Get the selected quantity from the request
+    $quantity = $_POST['quantity'];
 
     $query = "INSERT INTO winkelwagen (klant_id, artikel_id, hoeveelheid) VALUES ('$userId', '$productId', '$quantity')";
 
