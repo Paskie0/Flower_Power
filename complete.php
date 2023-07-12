@@ -13,8 +13,23 @@ if ($isLoggedIn) {
     // Check if the query was successful
     if ($orderResult && mysqli_num_rows($orderResult) > 0) {
         $order = mysqli_fetch_assoc($orderResult);
+
+        // Retrieve customer information from the "klanten" table
+        $customerQuery = "SELECT * FROM klanten WHERE klant_id = '$userId'";
+        $customerResult = mysqli_query($conn, $customerQuery);
+
+        // Check if the query was successful
+        if ($customerResult && mysqli_num_rows($customerResult) > 0) {
+            $customer = mysqli_fetch_assoc($customerResult);
+        } else {
+            $customer = null;
+        }
+
+        // Free the result set
+        mysqli_free_result($customerResult);
     } else {
         $order = null;
+        $customer = null;
     }
 
     // Free the result set
@@ -45,27 +60,31 @@ mysqli_close($conn);
     <?php include './components/header.php'; ?>
     <h1 class="pt-4 text-4xl font-bold text-center">Bedankt voor je bestelling!</h1>
     <div class="divider"></div>
-    <?php if ($order) : ?>
-        <table class="table table-bordered table-striped w-full">
+    <?php if ($order && $customer) : ?>
+        <h2>Customer Information</h2>
+        <p>Name: <?php echo $customer['klant_voornaam']; ?></p>
+        <p>Email: <?php echo $customer['klant_email']; ?></p>
+        <!-- Add more customer information fields as needed -->
+
+        <h2>Order Details</h2>
+        <table>
             <thead>
                 <tr>
-                    <th class="text-left">Bestel nr.</th>
-                    <th class="text-left">Klant nr.</th>
-                    <th class="text-left">Totaal</th>
-                    <th class="text-left">Datum</th>
+                    <th>Order ID</th>
+                    <th>Order Date</th>
+                    <!-- Add more columns as needed -->
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><?php echo $order['bestelling_id']; ?></td>
-                    <td><?php echo $order['klant_id']; ?></td>
-                    <td><?php echo $order['bestelling_totaal']; ?></td>
                     <td><?php echo $order['bestelling_datum']; ?></td>
+                    <!-- Add more cells with order data as needed -->
                 </tr>
             </tbody>
         </table>
     <?php else : ?>
-        <p>No order found.</p>
+        <p>No order found or customer information missing.</p>
     <?php endif; ?>
     <?php include './components/footer.php'; ?>
 </body>
