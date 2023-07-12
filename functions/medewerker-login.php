@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['loggedinMedewerker'] = true;
         $_SESSION['medewerker_id'] = $row['medewerker_id'];
         $_SESSION['medewerkerUsername'] = $row['medewerker_email'];
-        header("Location: /Flower-Power/index.php");
+        header("Location: /Flower-Power/dashboard.php");
         exit();
     } else {
         $message = "Fout wachtwoord of emailadres";
