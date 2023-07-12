@@ -1,3 +1,23 @@
+<?php // Assuming you have already established a database connection
+
+// Query to retrieve the count of items in the cart
+$cartQuery = "SELECT COUNT(*) AS cartCount FROM winkelwagen WHERE klant_id = $userId";
+
+// Execute the query
+$cartResult = mysqli_query($conn, $cartQuery);
+
+// Check if the query was successful and retrieve the cart count
+if ($cartResult && mysqli_num_rows($cartResult) > 0) {
+    $cartData = mysqli_fetch_assoc($cartResult);
+    $cartCount = $cartData['cartCount'];
+} else {
+    $cartCount = 0;
+}
+
+// Free the result set
+mysqli_free_result($cartResult);
+?>
+
 <div class="navbar bg-base-100 border-b border-gray-700 sticky top-0 z-10">
     <div class="navbar-start">
         <div class="dropdown">
@@ -93,7 +113,7 @@
         </div>
         <a href="/Flower-Power/cart.php" role="button" class="btn btn-ghost flex flex-col">
             <div class="indicator">
-                <span class="indicator-item badge badge-secondary">1</span>
+                <span class="indicator-item badge badge-secondary"><?php echo $cartCount; ?></span>
                 <i class="fa-solid fa-cart-shopping fa-xl"></i>
             </div>
 
