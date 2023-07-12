@@ -1,18 +1,19 @@
 <?php
+include_once './functions/initialize.php';
 include_once './functions/get-cart-items.php';
 
-// Perform delete operation based on $itemId
-$deleteItemId = $_POST['deleteItemId'];
+// Check if the deleteItemId is set
+if (isset($_POST['deleteItemId'])) {
+    // Get the deleteItemId from the POST array
+    $deleteItemId = $_POST['deleteItemId'];
 
-$deleteQuery = "DELETE FROM winkelwagen WHERE klant_id = '$userId' AND artikel_id = '$deleteItemId'";
+    // Perform your delete operation here using the $deleteItemId
+    // ...
+    // ...
 
-if (mysqli_query($conn, $deleteQuery)) {
-    // Deletion successful, refresh the page
+    // Redirect or refresh the page after deleting
     header('Location: cart.php');
     exit();
-} else {
-    // Error occurred during deletion
-    echo 'Failed to delete the item from the cart.';
 }
 ?>
 
