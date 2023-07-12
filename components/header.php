@@ -51,7 +51,7 @@
                     echo '<a href="/Flower-Power/account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Account</a>'
                 ?>
                 <?php if ($isMedewerker)
-                    echo  '<a href="/Flower-Power/medewerker-account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Medewerker</a>'
+                    echo  '<a href="/Flower-Power/medewerker-account.php" role="button" class="btn btn-wide btn-sm mt-2 no-animation">Account</a>'
                 ?>
                 <?php if ($isLoggedIn || $isMedewerker) : ?>
                     <form action="/Flower-Power/functions/logout.php" method="post">
