@@ -61,7 +61,7 @@ mysqli_close($conn);
     <h1 class="pt-4 text-4xl font-bold text-center">Bedankt voor je bestelling!</h1>
     <div class="divider"></div>
     <?php if ($order && $customer) : ?>
-        <h2>Customer Information</h2>
+        <h2>Persoonlijke informatie</h2>
         <p>Name: <?php echo $customer['klant_voornaam']; ?></p>
         <p>Email: <?php echo $customer['klant_email']; ?></p>
         <p>Straatnaam: <?php echo $customer['klant_straatnaam']; ?></p>
@@ -70,24 +70,26 @@ mysqli_close($conn);
         <!-- Add more customer information fields as needed -->
 
         <h2>Details:</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Bestel Nr.</th>
-                    <th>Bestel datum</th>
-                    <th>Totaal</th>
-                    <!-- Add more columns as needed -->
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><?php echo $order['bestelling_id']; ?></td>
-                    <td><?php echo $order['bestelling_datum']; ?></td>
-                    <td><?php echo $order['bestelling_totaal']; ?></td>
-                    <!-- Add more cells with order data as needed -->
-                </tr>
-            </tbody>
-        </table>
+        <div class="flex justify-center">
+            <table class="w-full max-w-md bg-base-200 shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Bestel Nr.</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Bestel datum</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Totaal</th>
+                        <!-- Add more columns as needed -->
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr>
+                        <td class="px-4 py-3"><?php echo $order['bestelling_id']; ?></td>
+                        <td class="px-4 py-3"><?php echo $order['bestelling_datum']; ?></td>
+                        <td class="px-4 py-3"><?php echo $order['bestelling_totaal']; ?></td>
+                        <!-- Add more cells with order data as needed -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     <?php else : ?>
         <p>No order found or customer information missing.</p>
     <?php endif; ?>
