@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errorMessage = "Fout wachtwoord of emailadres";
 
         echo '<script type="text/javascript">';
-        echo 'alert("' . $message . '");';
+        echo 'alert("' . $errorMessage . '");';
         echo 'history.back()';
         echo '</script>';
     }
