@@ -49,10 +49,10 @@ mysqli_close($conn);
         <table>
             <thead>
                 <tr>
-                    <th>Order ID</th>
-                    <th>Customer Name</th>
-                    <th>Email</th>
-                    <!-- Add more columns as needed -->
+                    <th>Bestel nr.</th>
+                    <th>Klant nr.</th>
+                    <th>Totaal</th>
+                    <th>Datum</th>
                 </tr>
             </thead>
             <tbody>
