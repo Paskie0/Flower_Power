@@ -19,15 +19,11 @@ include_once '../functions/initialize.php';
     <div class="divider"></div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
         <?php
-        // Assuming you have already established a database connection
 
-        // Query to retrieve products from the database
         $query = "SELECT * FROM artikelen";
 
-        // Execute the query
         $result = mysqli_query($conn, $query);
 
-        // Check if the query was successful
         if ($result && mysqli_num_rows($result) > 0) {
             $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -49,20 +45,16 @@ include_once '../functions/initialize.php';
         <?php
             }
         } else {
-            // No products found in the database
             echo '<p>No products found.</p>';
         }
 
-        // Free the result set
         mysqli_free_result($result);
 
-        // Close the database connection
         mysqli_close($conn);
         ?>
     </div>
     <?php include '../components/footer.php'; ?>
     <script>
-        // JavaScript code for quantity selector and Add to Cart button
         document.addEventListener('DOMContentLoaded', function() {
             var addToCartButtons = document.querySelectorAll('.add-to-cart-button');
             addToCartButtons.forEach(function(addToCartButton) {
@@ -79,7 +71,6 @@ include_once '../functions/initialize.php';
                         if (xhr.readyState === XMLHttpRequest.DONE) {
                             if (xhr.status === 200) {
                                 console.log('Product added to cart successfully');
-                                //create alert to show product is added to cart
                                 var alert = document.createElement('div');
                                 alert.classList.add('modal', 'modal-open', 'p-4', 'bg-base-200');
                                 alert.innerHTML = `

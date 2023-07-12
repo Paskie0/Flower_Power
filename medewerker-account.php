@@ -16,49 +16,39 @@ include_once './functions/medewerker-info.php';
     <script>
         $(document).ready(function() {
             $('.edit-btn').click(function() {
-                // Get the parent <li> element
                 var listItem = $(this).closest('li');
 
-                // Hide the edit button and show the save button
                 listItem.find('.edit-btn').hide();
                 listItem.find('.save-btn').show();
 
-                // Enable editing of the text content
                 listItem.find('p').prop('contenteditable', true).addClass('border border-gray-300');
 
-                // Set focus on the editable element
                 listItem.find('p').focus();
             });
 
             $('.save-btn').click(function() {
-                // Get the parent <li> element
                 var listItem = $(this).closest('li');
 
-                // Hide the save button and show the edit button
                 listItem.find('.save-btn').hide();
                 listItem.find('.edit-btn').show();
 
-                // Disable editing of the text content
                 listItem.find('p').prop('contenteditable', false).removeClass('border border-gray-300');
 
-                // Get the updated text content
                 var updatedContent = listItem.find('p').text().trim();
 
-                // Perform an AJAX request to save the updated content to the database
-                // Modify this code to fit your specific database and server-side logic
                 $.ajax({
-                    url: './functions/update-medewerkers.php', // Replace with your PHP file to handle the update
+                    url: './functions/update-medewerkers.php',
                     method: 'POST',
                     data: {
-                        field: listItem.find('h2').text().trim(), // Specify the field being updated
-                        value: updatedContent, // Pass the updated content
+                        field: listItem.find('h2').text().trim(),
+                        value: updatedContent,
                     },
                     success: function(response) {
-                        // Handle the success response if needed
+
                         console.log('Data updated successfully!');
                     },
                     error: function(xhr, status, error) {
-                        // Handle the error response if needed
+
                         console.error('Error updating data:', error);
                     }
                 });
