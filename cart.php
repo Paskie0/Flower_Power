@@ -2,29 +2,19 @@
 include_once './functions/initialize.php';
 include_once './functions/get-cart-items.php';
 
-// Check if the deleteItemButton is clicked
-if (isset($_POST['deleteItemButton'])) {
+// Perform delete operation based on $itemId
+$deleteItemId = $_POST['deleteItemId'];
 
-    $deleteItemId = $_POST['deleteItemId'];
+$deleteQuery = "DELETE FROM winkelwagen WHERE klant_id = '$userId' AND artikel_id = '$deleteItemId'";
 
-    // Query to delete the item from the winkelwagen table
-    $query = "DELETE FROM winkelwagen WHERE artikel_id = '$deleteItemId' AND klant_id = '$userId'";
-
-    // Execute the query
-    if (mysqli_query($conn, $query)) {
-        // Deletion successful
-        // Redirect or display a success message
-        header('Location: cart.php');
-        exit();
-    } else {
-        // Error occurred during deletion
-        // Handle the error accordingly
-        echo 'Failed to delete the item from the cart.';
-    }
-
-    mysqli_close($conn); // Close the database connection
+if (mysqli_query($conn, $deleteQuery)) {
+    // Deletion successful, refresh the page
+    header('Location: cart.php');
+    exit();
+} else {
+    // Error occurred during deletion
+    echo 'Failed to delete the item from the cart.';
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -44,10 +34,10 @@ if (isset($_POST['deleteItemButton'])) {
     <ul class="p-4">
         <?php foreach ($cartItems as $item) : ?>
             <li>
-                <?php echo $item['artikel_naam']; ?> (<?php echo $item['hoeveelheid']; ?>) - $<?php echo $item['artikel_prijs']; ?>
+                <?php echo $item['artikel_naam']; ?> - $<?php echo $item['artikel_prijs']; ?>
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                     <input type="hidden" name="deleteItemId" value="<?php echo $item['artikel_id']; ?>">
-                    <button type="submit" class="btn btn-primary" name="deleteItemButton">Delete</button>
+                    <button type="submit" class="btn btn-primary">Delete</button>
                 </form>
             </li>
         <?php endforeach; ?>
