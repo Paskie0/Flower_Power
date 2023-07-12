@@ -42,7 +42,7 @@ include_once '../functions/initialize.php';
                         <h2 class="text-xl font-semibold"><?php echo $productNaam; ?></h2>
                         <p class="text-gray-600">Price: $<?php echo $productPrijs; ?></p>
                         <p class="text-gray-600"><?php echo $productBeschrijving; ?></p>
-                        <input type="number" class="quantity-input input input-bordered w-20" value="1" min="1">
+                        <input type="number" class="quantity-input input input-bordered w-20" value="6" min="1">
                         <button class="add-to-cart-button btn btn-primary btn-sm mt-4 no-animation" data-product-id="<?php echo $productId; ?>">Add to Cart</button>
                     </div>
                 </div>
