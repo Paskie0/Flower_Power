@@ -113,11 +113,28 @@ mysqli_free_result($cartResult);
         </div>
         <a href="/Flower-Power/cart.php" role="button" class="btn btn-ghost flex flex-col">
             <div class="indicator">
-                <span class="indicator-item badge badge-secondary"><?php echo $cartCount; ?></span>
+                <span class="indicator-item badge badge-secondary" id="cartCountIndicator">0</span>
                 <i class="fa-solid fa-cart-shopping fa-xl"></i>
             </div>
 
             <span class="hidden md:inline normal-case">Cart</span>
         </a>
+
+        <script>
+            // JavaScript code to fetch the cart count and update the indicator
+            document.addEventListener('DOMContentLoaded', function() {
+                var cartCountIndicator = document.getElementById('cartCountIndicator');
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '/Flower-Power/cart_count.php', true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                        var cartCount = parseInt(xhr.responseText);
+                        cartCountIndicator.textContent = cartCount;
+                    }
+                };
+                xhr.send();
+            });
+        </script>
     </div>
 </div>
