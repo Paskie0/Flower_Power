@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query = "UPDATE medewerkers SET $field = ? WHERE medewerker_id = ?";
     $statement = $conn->prepare($query);
 
-    $statement->bind_param("ss", $value, $klant_id);
+    $statement->bind_param("ss", $value, $medewerker_id);
 
     if ($statement->execute()) {
         echo "Data updated successfully!";
