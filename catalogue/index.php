@@ -79,6 +79,8 @@ include_once '../functions/initialize.php';
                         if (xhr.readyState === XMLHttpRequest.DONE) {
                             if (xhr.status === 200) {
                                 console.log('Product added to cart successfully');
+                                $succesMessage = 'Product is toegevoegd aan winkelwagen';
+                                alert($succesMessage);
                             } else {
                                 console.log('Error adding product to cart');
                             }
