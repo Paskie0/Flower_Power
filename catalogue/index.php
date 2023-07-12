@@ -81,7 +81,7 @@ include_once '../functions/initialize.php';
                                 console.log('Product added to cart successfully');
                                 //create alert to show product is added to cart
                                 var alert = document.createElement('div');
-                                alert.classList.add('alert', 'alert-success', 'fixed', 'top-0', 'right-0', 'm-4');
+                                alert.classList.add('modal', 'modal-open');
                                 alert.innerHTML = 'Product added to cart successfully';
                                 document.body.appendChild(alert);
                                 setTimeout(function() {
