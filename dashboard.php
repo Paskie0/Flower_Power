@@ -17,7 +17,7 @@ include_once './functions/initialize.php';
     <?php include './components/header.php'; ?>
     <h1 class="pt-4 text-4xl font-bold text-center">Admin Dashboard</h1>
     <div class="divider"></div>
-    <div class=" gap-4 flex justify-between">
+    <div class=" gap-4 flex justify-between flex-wrap">
         <div class="card w-96 bg-base-200 shadow-xl">
             <div class="card-body">
                 <h2 class="card-title">Card title!</h2>
