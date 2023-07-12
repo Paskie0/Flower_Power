@@ -1,22 +1,33 @@
 <?php
+session_start();
 include_once './functions/initialize.php';
 include_once './functions/get-cart-items.php';
 
-// Check if the form for deleting an item is submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteItemId'])) {
-    $itemId = $_POST['deleteItemId'];
 
-    // Perform the deletion operation
-    $deleteQuery = "DELETE FROM winkelwagen WHERE klant_id = '$userId' AND artikel_id = '$itemId'";
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    $userId = $_SESSION['user_id'];
 
-    if (mysqli_query($conn, $deleteQuery)) {
-        // Refresh the page to update the cart items
-        header('Location: cart.php');
-        exit();
-    } else {
-        // Handle the deletion error
-        $deletionError = true;
+    // Check if the form is submitted and the item ID is provided
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteItemId'])) {
+        $itemId = $_POST['deleteItemId'];
+
+        // Query to delete the item from the cart
+        $deleteQuery = "DELETE FROM winkelwagen WHERE klant_id = '$userId' AND artikel_id = '$itemId'";
+
+        // Execute the query
+        if (mysqli_query($conn, $deleteQuery)) {
+            // Deletion successful, refresh the page
+            header('Location: cart.php');
+            exit();
+        } else {
+            // Error occurred during deletion
+            echo 'Failed to delete the item from the cart.';
+        }
     }
+} else {
+    // User is not logged in, handle accordingly
+    header('Location: login.php');
+    exit();
 }
 ?>
 
@@ -38,16 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteItemId'])) {
         <?php foreach ($cartItems as $item) : ?>
             <li>
                 <?php echo $item['artikel_naam']; ?> - $<?php echo $item['artikel_prijs']; ?>
-                <form method="post" action="cart.php">
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                     <input type="hidden" name="deleteItemId" value="<?php echo $item['artikel_id']; ?>">
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-primary">Delete</button>
                 </form>
             </li>
         <?php endforeach; ?>
     </ul>
-    <?php if (isset($deletionError)) : ?>
-        <p>Error occurred during item deletion. Please try again.</p>
-    <?php endif; ?>
     <a href="checkout.php" class="btn btn-primary m-4">Bestellen</a>
     <?php include './components/footer.php'; ?>
 </body>
