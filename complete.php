@@ -1,5 +1,23 @@
 <?php
 include_once './functions/initialize.php';
+include_once './functions/connect.php';
+
+// Retrieve order and customer data from the database
+$orderQuery = "SELECT * FROM bestellingen";
+$orderResult = mysqli_query($conn, $orderQuery);
+
+// Check if the query was successful
+if ($orderResult && mysqli_num_rows($orderResult) > 0) {
+    $orders = mysqli_fetch_all($orderResult, MYSQLI_ASSOC);
+} else {
+    $orders = [];
+}
+
+// Free the result set
+mysqli_free_result($orderResult);
+
+// Close the database connection
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -8,36 +26,34 @@ include_once './functions/initialize.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collectie</title>
+    <title>Order Overview</title>
     <link rel="stylesheet" href="./css/output.css">
-    <script src="https://kit.fontawesome.com/d437031e9c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <?php include './components/header.php'; ?>
-    <h1 class="pt-4 text-4xl font-bold text-center">Bedankt voor je bestelling!</h1>
-    <div class="divider"></div>
-    <div class="text-center">
-        <button id="createPdfButton" class="btn btn-primary">Create PDF</button>
-    </div>
+    <h1>Order Overview</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer Name</th>
+                <th>Email</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($orders as $order) : ?>
+                <tr>
+                    <td><?php echo $order['bestelling_id']; ?></td>
+                    <td><?php echo $order['klant_id']; ?></td>
+                    <td><?php echo $order['bestelling_totaal']; ?></td>
+                    <td><?php echo $order['bestelling_datum']; ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
     <?php include './components/footer.php'; ?>
-
-    <script>
-        document.getElementById('createPdfButton').addEventListener('click', function() {
-            // Make a request to the server to generate the PDF
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', '/Flower-Power/functions/generate-pdf.php', true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                    // PDF generation completed, do something with the generated PDF
-                    var pdfUrl = xhr.responseText;
-                    // For example, open the PDF in a new tab
-                    window.open(pdfUrl, '_blank');
-                }
-            };
-            xhr.send();
-        });
-    </script>
 </body>
 
 </html>
