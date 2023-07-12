@@ -14,7 +14,6 @@ if ($result->num_rows > 0) {
     $firstName = $row['medewerker_voornaam'];
     $infix = $row['medewerker_tussenvoegsel'];
     $lastName = $row['medewerker_achternaam'];
-    $dateOfBirth = $row['medewerker_geboortedatum'];
 }
 
 $conn->close();
