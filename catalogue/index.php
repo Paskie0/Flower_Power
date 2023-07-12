@@ -79,8 +79,14 @@ include_once '../functions/initialize.php';
                         if (xhr.readyState === XMLHttpRequest.DONE) {
                             if (xhr.status === 200) {
                                 console.log('Product added to cart successfully');
-                                $succesMessage = 'Product is toegevoegd aan winkelwagen';
-                                alert($succesMessage);
+                                //create alert to show product is added to cart
+                                var alert = document.createElement('div');
+                                alert.classList.add('alert', 'alert-success', 'fixed', 'top-0', 'right-0', 'm-4');
+                                alert.innerHTML = 'Product added to cart successfully';
+                                document.body.appendChild(alert);
+                                setTimeout(function() {
+                                    alert.remove();
+                                }, 3000);
                             } else {
                                 console.log('Error adding product to cart');
                             }
