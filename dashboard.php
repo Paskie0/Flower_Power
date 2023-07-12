@@ -26,34 +26,17 @@ if (!isset($_SESSION['loggedinMedewerker']) || $_SESSION['loggedinMedewerker'] !
     <?php include './components/header.php'; ?>
     <h1 class="pt-4 text-4xl font-bold text-center">Admin Dashboard</h1>
     <div class="divider"></div>
-    <div class=" gap-4 flex justify-between flex-wrap">
-        <div class="card w-96 bg-base-200 shadow-xl">
+    <div class=" gap-4 flex justify-evenly flex-wrap">
+        <a href="/Flower-Power/bestelling-overzicht.php" class="card w-96 bg-gray-800 shadow-xl">
             <div class="card-body">
-                <h2 class="card-title">Card title!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Buy Now</button>
-                </div>
+                <h2 class="card-title">Overzicht bestellingen</h2>
             </div>
-        </div>
-        <div class="card w-96 bg-base-200 shadow-xl">
+        </a>
+        <a href="/Flower-Power/product-overview.php" class="card w-96 bg-gray-800 shadow-xl">
             <div class="card-body">
-                <h2 class="card-title">Card title!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Buy Now</button>
-                </div>
+                <h2 class="card-title">Overzicht producten</h2>
             </div>
-        </div>
-        <div class="card w-96 bg-base-200 shadow-xl">
-            <div class="card-body">
-                <h2 class="card-title">Card title!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Buy Now</button>
-                </div>
-            </div>
-        </div>
+        </a>
     </div>
     <?php include './components/footer.php'; ?>
 </body>
