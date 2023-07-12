@@ -2,19 +2,30 @@
 include_once './functions/initialize.php';
 include_once './functions/connect.php';
 
-// Retrieve order and customer data from the database
-$orderQuery = "SELECT * FROM bestellingen";
-$orderResult = mysqli_query($conn, $orderQuery);
+// Check if the user is logged in
+if ($isLoggedIn) {
+    $userId = $_SESSION['user_id'];
 
-// Check if the query was successful
-if ($orderResult && mysqli_num_rows($orderResult) > 0) {
-    $orders = mysqli_fetch_all($orderResult, MYSQLI_ASSOC);
+    // Retrieve the most recent order of the logged-in customer from the database
+    $orderQuery = "SELECT * FROM bestellingen WHERE klant_id = '$userId' ORDER BY bestelling_datum DESC LIMIT 1";
+    $orderResult = mysqli_query($conn, $orderQuery);
+
+    // Check if the query was successful
+    if ($orderResult && mysqli_num_rows($orderResult) > 0) {
+        $order = mysqli_fetch_assoc($orderResult);
+    } else {
+        $order = null;
+    }
+
+    // Free the result set
+    mysqli_free_result($orderResult);
 } else {
-    $orders = [];
+    // User is not logged in, handle accordingly
+    // Redirect to login page or display an error message
+    // For example:
+    header('Location: login.php');
+    exit();
 }
-
-// Free the result set
-mysqli_free_result($orderResult);
 
 // Close the database connection
 mysqli_close($conn);
@@ -32,27 +43,30 @@ mysqli_close($conn);
 
 <body>
     <?php include './components/header.php'; ?>
-    <h1>Order Overview</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Order ID</th>
-                <th>Customer Name</th>
-                <th>Email</th>
-                <!-- Add more columns as needed -->
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($orders as $order) : ?>
+    <h1 class="pt-4 text-4xl font-bold text-center">Bedankt voor je bestelling!</h1>
+    <div class="divider"></div>
+    <?php if ($order) : ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer Name</th>
+                    <th>Email</th>
+                    <!-- Add more columns as needed -->
+                </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td><?php echo $order['bestelling_id']; ?></td>
                     <td><?php echo $order['klant_id']; ?></td>
                     <td><?php echo $order['bestelling_totaal']; ?></td>
                     <td><?php echo $order['bestelling_datum']; ?></td>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    <?php else : ?>
+        <p>No order found.</p>
+    <?php endif; ?>
     <?php include './components/footer.php'; ?>
 </body>
 
