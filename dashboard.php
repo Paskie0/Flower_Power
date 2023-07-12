@@ -15,7 +15,7 @@ include_once './functions/initialize.php';
 
 <body>
     <?php include './components/header.php'; ?>
-    <h1 class="pt-4 text-4xl font-bold text-center">Welcome to Flower Power</h1>
+    <h1 class="pt-4 text-4xl font-bold text-center">Admin Dashboard</h1>
     <div class="divider"></div>
     <div class="grid grid-cols-3 gap-4">
         <a href="#" class="card bg-base-200 shadow-lg rounded-lg overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
@@ -32,7 +32,6 @@ include_once './functions/initialize.php';
         </a>
     </div>
     <?php include './components/footer.php'; ?>
-    <script src="https://unpkg.com/daisyui@1.11.1/dist/daisyui.min.js"></script>
 </body>
 
 </html>
