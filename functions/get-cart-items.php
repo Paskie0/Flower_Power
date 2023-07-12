@@ -1,4 +1,5 @@
 <?php
+session_start();
 $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
 $isMedewerker = isset($_SESSION['loggedinMedewerker']) && $_SESSION['loggedinMedewerker'] === true;
 include_once 'connect.php';
@@ -13,7 +14,7 @@ if (!$isLoggedIn) {
 
 $userId = $_SESSION['user_id'];
 
-$query = "SELECT a.artikel_naam, a.artikel_prijs, c.hoeveelheid
+$query = "SELECT a.artikel_id, a.artikel_naam, a.artikel_prijs, c.hoeveelheid
           FROM artikelen AS a
           INNER JOIN winkelwagen AS c ON a.artikel_id = c.artikel_id
           WHERE c.klant_id = '$userId'";
