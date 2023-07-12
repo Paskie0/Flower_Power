@@ -73,7 +73,7 @@ include_once '../functions/initialize.php';
                     var productId = addToCartButton.dataset.productId;
 
                     var xhr = new XMLHttpRequest();
-                    xhr.open('POST', '../functions/add_to_cart.php', true);
+                    xhr.open('POST', '/Flower-Power/functions/add-to-cart.php', true);
                     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                     xhr.onreadystatechange = function() {
                         if (xhr.readyState === XMLHttpRequest.DONE) {
