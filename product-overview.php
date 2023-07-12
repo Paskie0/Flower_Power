@@ -41,7 +41,7 @@ if (!isset($_SESSION['loggedinMedewerker']) || $_SESSION['loggedinMedewerker'] !
                     <input type="number" id="product_prijs" name="product_prijs" required class="input input-bordered w-full"><br>
 
                     <label for="product_beschrijving" class="font-semibold py-1">Product Description:</label>
-                    <textarea id="product_beschrijving" name="product_beschrijving" class="textarea textarea-bordered" required></textarea><br>
+                    <textarea id="product_beschrijving" name="product_beschrijving" class="textarea textarea-bordered w-full" required></textarea><br>
                     <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Toevoegen</button>
                 </form>
             </div>
