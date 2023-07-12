@@ -10,6 +10,7 @@ if (!$isLoggedIn) {
     echo 'alert("' . $message . '");';
     echo 'history.back()';
     echo '</script>';
+    exit(); // Added exit() here to stop executing the remaining code
 }
 
 $userId = $_SESSION['user_id'];
@@ -28,4 +29,5 @@ if ($result && mysqli_num_rows($result) > 0) {
 
 mysqli_free_result($result);
 
+// Close the database connection
 mysqli_close($conn);
