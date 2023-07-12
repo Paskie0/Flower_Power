@@ -106,7 +106,7 @@
                 var cartCountIndicator = document.getElementById('cartCountIndicator');
 
                 var xhr = new XMLHttpRequest();
-                xhr.open('GET', '/Flower-Power/functions/cart_count.php', true);
+                xhr.open('GET', '/Flower-Power/functions/cart-count.php', true);
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                         var cartCount = parseInt(xhr.responseText);
