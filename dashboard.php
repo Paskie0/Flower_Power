@@ -1,5 +1,14 @@
 <?php
 include_once './functions/initialize.php';
+
+if (!isset($_SESSION['loggedinMedewerker']) || $_SESSION['loggedinMedewerker'] !== true) {
+    // Redirect the user to a login page or show an access denied message
+    $succesMessage = "U bent niet ingelogd als medewerker";
+    echo '<script type="text/javascript">';
+    echo 'alert("' . $succesMessage . '");';
+    echo 'history.back()';
+    echo '</script>';
+}
 ?>
 
 <!DOCTYPE html>
@@ -37,24 +46,6 @@ include_once './functions/initialize.php';
             </div>
         </div>
         <div class="card w-96 bg-base-200 shadow-xl">
-            <div class="card-body">
-                <h2 class="card-title">Card title!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Buy Now</button>
-                </div>
-            </div>
-        </div>
-        <div class="card w-fit bg-base-200 shadow-xl">
-            <div class="card-body">
-                <h2 class="card-title">Card title!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Buy Now</button>
-                </div>
-            </div>
-        </div>
-        <div class="card w-fit bg-base-200 shadow-xl">
             <div class="card-body">
                 <h2 class="card-title">Card title!</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
