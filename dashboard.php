@@ -1,6 +1,5 @@
 <?php
 include_once './functions/initialize.php';
-include_once './functions/checkout-logic.php';
 ?>
 
 <!DOCTYPE html>
