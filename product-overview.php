@@ -26,7 +26,7 @@ if (!isset($_SESSION['loggedinMedewerker']) || $_SESSION['loggedinMedewerker'] !
     <?php include './components/header.php'; ?>
     <div class="flex items-center justify-center">
         <h1 class="pt-4 text-4xl font-bold">Product overzicht</h1>
-        <div class="dropdown dropdown-end drop-shadow-lg ml-4">
+        <div class="dropdown dropdown-end drop-shadow-lg ml-4 z-10">
             <label tabindex="0" class="btn btn-ghost flex flex-col">
                 <i class="fa-solid fa-plus fa-xl"></i>
                 <span class="hidden md:inline normal-case">Product toevoegen</span>
@@ -41,7 +41,7 @@ if (!isset($_SESSION['loggedinMedewerker']) || $_SESSION['loggedinMedewerker'] !
                     <input type="number" id="product_prijs" name="product_prijs" required class="input input-bordered w-full"><br>
 
                     <label for="product_beschrijving" class="font-semibold py-1">Product Description:</label>
-                    <textarea id="product_beschrijving" name="product_beschrijving" required></textarea><br>
+                    <textarea id="product_beschrijving" name="product_beschrijving" class="textarea textarea-bordered" required></textarea><br>
                     <button type="submit" class="btn btn-primary btn-wide btn-sm mt-4 no-animation">Toevoegen</button>
                 </form>
             </div>
