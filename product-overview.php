@@ -31,14 +31,14 @@ if (!isset($_SESSION['loggedinMedewerker']) || $_SESSION['loggedinMedewerker'] !
                 <i class="fa-solid fa-plus fa-xl"></i>
                 <span class="hidden md:inline normal-case">Product toevoegen</span>
             </label>
-            <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
+            <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box flex items-center">
                 <form action="./functions/add-product.php" method="post" tabindex="0" id="login" autocomplete="off">
 
                     <label for="product_naam" class="font-semibold py-1">Product Naam:</label>
                     <input type="text" id="product_naam" name="product_naam" required class="input input-bordered w-full"><br>
 
                     <label for="product_prijs" class="font-semibold py-1">Product Prijs:</label>
-                    <input type="number" id="product_prijs" name="product_prijs" required class="input input-bordered w-full"><br>
+                    <input type="number" step="any" id="product_prijs" name="product_prijs" required class="input input-bordered w-full"><br>
 
                     <label for="product_beschrijving" class="font-semibold py-1">Product Beschrijving:</label>
                     <textarea id="product_beschrijving" name="product_beschrijving" class="textarea textarea-bordered w-full" required></textarea><br>
