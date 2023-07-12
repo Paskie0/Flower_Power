@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteItemId'])) {
     <ul class="p-4">
         <?php foreach ($cartItems as $item) : ?>
             <li>
-                <?php echo $item['artikel_naam']; ?> - $<?php echo $item['artikel_prijs']; ?>
+                <?php echo $item['artikel_naam']; ?> (<?php echo $item['hoeveelheid']; ?>) - $<?php echo $item['artikel_prijs']; ?>
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                     <input type="hidden" name="deleteItemId" value="<?php echo $item['artikel_id']; ?>">
                     <button type="submit" class="btn btn-primary">Delete</button>
