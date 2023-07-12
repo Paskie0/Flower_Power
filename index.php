@@ -38,9 +38,13 @@ include_once './functions/initialize.php';
                 $productPrijs = $row['artikel_prijs'];
         ?>
                 <div class="carousel-item flex-col w-40">
-                    <img src="img/flower1.webp" class="rounded-box" />
+                    <?php
+                    $randomNumber = mt_rand(1, 6);
+                    $productAfbeelding = "./img/flower" . $randomNumber . ".webp";
+                    ?>
+                    <img src="<?php echo $productAfbeelding; ?>" class="rounded-box" />
                     <h3 class="font-semibold text-lg"><?php echo $productNaam; ?></h3>
-                    <p>€<?php echo $productPrijs; ?></p>
+                    <p>$<?php echo $productPrijs; ?></p>
                 </div>
         <?php
             }
