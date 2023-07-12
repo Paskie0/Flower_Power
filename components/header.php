@@ -34,7 +34,7 @@
             <i class="fa-solid fa-address-card fa-xl"></i>
             <span class="hidden md:inline normal-case">Contact</span>
         </a>
-        <div class="dropdown dropdown-end drop-shadow-lg">
+        <details class="dropdown dropdown-end drop-shadow-lg">
             <label tabindex="0" class="btn btn-ghost flex flex-col">
                 <i class="fa-solid fa-user fa-xl"></i>
                 <span class="hidden md:inline normal-case">Account</span>
@@ -90,7 +90,7 @@
                     <button onclick="medewerkerForm()" id="medewerkerFormButton" type="button" class="btn btn-wide btn-sm mt-2 no-animation">Medewerker</button>
                 <?php endif; ?>
             </div>
-        </div>
+        </details>
         <a href="/Flower-Power/cart.php" role="button" class="btn btn-ghost flex flex-col">
             <div class="indicator">
                 <span class="indicator-item badge badge-secondary" id="cartCountIndicator">0</span>
