@@ -11,7 +11,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 // Retrieve the user ID from the session
 $userId = $_SESSION['user_id'];
 
-$query = "SELECT a.artikel_naam, a.artikel_prijs
+$query = "SELECT a.artikel_naam, a.artikel_prijs, c.hoeveelheid
           FROM artikelen AS a
           INNER JOIN winkelwagen AS c ON a.artikel_id = c.artikel_id
           WHERE c.klant_id = '$userId'";
