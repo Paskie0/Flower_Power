@@ -25,7 +25,7 @@ include_once './functions/checkout-logic.php';
         while ($row = mysqli_fetch_assoc($result)) {
             $productName = $row['artikel_naam'];
             $productPrice = $row['artikel_prijs'];
-            $quantity = 1;
+            $quantity = $row['hoeveelheid'];
             $subtotal = $productPrice * $quantity;
         ?>
             <li><?php echo $productName; ?> - Hoeveelheid: <?php echo $quantity; ?> - Totaal: $<?php echo $subtotal; ?></li>
