@@ -61,12 +61,12 @@ mysqli_close($conn);
     <h1 class="pt-4 text-4xl font-bold text-center">Bedankt voor je bestelling!</h1>
     <div class="divider"></div>
     <?php if ($order && $customer) : ?>
-        <h2>Persoonlijke informatie</h2>
-        <p>Name: <?php echo $customer['klant_voornaam']; ?></p>
-        <p>Email: <?php echo $customer['klant_email']; ?></p>
-        <p>Straatnaam: <?php echo $customer['klant_straatnaam']; ?></p>
-        <p>Huisnummer: <?php echo $customer['klant_huisnummer']; ?></p>
-        <p>Postcode: <?php echo $customer['klant_postcode']; ?></p>
+        <h2 class="text-center">Persoonlijke informatie</h2>
+        <p class="text-center">Name: <?php echo $customer['klant_voornaam']; ?></p>
+        <p class="text-center">Email: <?php echo $customer['klant_email']; ?></p>
+        <p class="text-center">Straatnaam: <?php echo $customer['klant_straatnaam']; ?></p>
+        <p class="text-center">Huisnummer: <?php echo $customer['klant_huisnummer']; ?></p>
+        <p class="text-center">Postcode: <?php echo $customer['klant_postcode']; ?></p>
         <!-- Add more customer information fields as needed -->
 
         <h2>Details:</h2>
