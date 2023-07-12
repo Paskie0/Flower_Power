@@ -13,13 +13,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $quantity = $_POST['quantity']; // Get the selected quantity from the request
 
     $query = "INSERT INTO winkelwagen (klant_id, artikel_id, hoeveelheid) VALUES ('$userId', '$productId', '$quantity')";
+    $succesMessage = 'Product is toegevoegd aan winkelwagen';
+    echo '<script type="text/javascript">';
+    echo 'alert("' . $succesMessage . '");';
+    echo 'window.reload();';
+    echo '</script>';
 
     if (mysqli_query($conn, $query)) {
-        $succesMessage = 'Product is toegevoegd aan winkelwagen';
-        echo '<script type="text/javascript">';
-        echo 'alert("' . $succesMessage . '");';
-        echo 'window.reload();';
-        echo '</script>';
+        header('HTTP/1.1 200 OK');
+        exit();
     } else {
         header('HTTP/1.1 500 Internal Server Error');
         exit();
