@@ -6,7 +6,7 @@ if (!isset($_SESSION['loggedinMedewerker']) || $_SESSION['loggedinMedewerker'] !
     $succesMessage = "U bent niet ingelogd als medewerker";
     echo '<script type="text/javascript">';
     echo 'alert("' . $succesMessage . '");';
-    echo 'history.back()';
+    echo 'window.location.href = "login.php"';
     echo '</script>';
 }
 ?>
