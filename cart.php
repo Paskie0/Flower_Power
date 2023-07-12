@@ -19,7 +19,7 @@ include_once './functions/get-cart-items.php';
     <h2 class="font-bold p-4">Winkelwagen:</h2>
     <ul class="p-4">
         <?php foreach ($cartItems as $item) : ?>
-            <li><?php echo $item['artikel_naam']; ?> - $<?php echo $item['artikel_prijs']; ?></li>
+            <li><?php echo $item['artikel_naam']; ?> (<?php echo $item['hoeveelheid']; ?>) - $<?php echo $item['artikel_prijs']; ?></li>
         <?php endforeach; ?>
     </ul>
     <a href="checkout.php" class="btn btn-primary m-4">Bestellen</a>

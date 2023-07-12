@@ -86,7 +86,7 @@ include_once '../functions/initialize.php';
                                     <div class="modal-box">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h3 class="text-lg font-medium">Product added to cart successfully</h3>
+                                                <h3 class="text-lg font-medium">Artikel toegevoegd aan winkelwagen</h3>
                                             </div>
                                             <div class="modal-footer">
                                                 <button class="btn btn-primary btn-sm" onclick="document.querySelector('.modal').classList.remove('modal-open')">OK</button>
