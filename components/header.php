@@ -101,7 +101,6 @@
         </a>
 
         <script>
-            // JavaScript code to fetch the cart count and update the indicator
             document.addEventListener('DOMContentLoaded', function() {
                 var cartCountIndicator = document.getElementById('cartCountIndicator');
 
@@ -110,6 +109,7 @@
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                         var cartCount = parseInt(xhr.responseText);
+                        cartCount = isNaN(cartCount) ? 0 : cartCount; // Check for NaN and set it to 0
                         cartCountIndicator.textContent = cartCount;
                     }
                 };
