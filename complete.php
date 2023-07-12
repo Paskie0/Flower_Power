@@ -64,14 +64,18 @@ mysqli_close($conn);
         <h2>Customer Information</h2>
         <p>Name: <?php echo $customer['klant_voornaam']; ?></p>
         <p>Email: <?php echo $customer['klant_email']; ?></p>
+        <p>Straatnaam: <?php echo $customer['klant_straatnaam']; ?></p>
+        <p>Huisnummer: <?php echo $customer['klant_huisnummer']; ?></p>
+        <p>Postcode: <?php echo $customer['klant_postcode']; ?></p>
         <!-- Add more customer information fields as needed -->
 
-        <h2>Order Details</h2>
+        <h2>Details:</h2>
         <table>
             <thead>
                 <tr>
-                    <th>Order ID</th>
-                    <th>Order Date</th>
+                    <th>Bestel Nr.</th>
+                    <th>Bestel datum</th>
+                    <th>Totaal</th>
                     <!-- Add more columns as needed -->
                 </tr>
             </thead>
@@ -79,6 +83,7 @@ mysqli_close($conn);
                 <tr>
                     <td><?php echo $order['bestelling_id']; ?></td>
                     <td><?php echo $order['bestelling_datum']; ?></td>
+                    <td><?php echo $order['bestelling_totaal']; ?></td>
                     <!-- Add more cells with order data as needed -->
                 </tr>
             </tbody>
