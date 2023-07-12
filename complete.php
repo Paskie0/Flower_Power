@@ -62,14 +62,12 @@ mysqli_close($conn);
     <div class="divider"></div>
     <?php if ($order && $customer) : ?>
         <h2 class="text-center">Persoonlijke informatie</h2>
-        <p class="text-center">Name: <?php echo $customer['klant_voornaam']; ?></p>
+        <p class="text-center">Naam: <?php echo $customer['klant_voornaam']; ?></p>
         <p class="text-center">Email: <?php echo $customer['klant_email']; ?></p>
         <p class="text-center">Straatnaam: <?php echo $customer['klant_straatnaam']; ?></p>
         <p class="text-center">Huisnummer: <?php echo $customer['klant_huisnummer']; ?></p>
         <p class="text-center">Postcode: <?php echo $customer['klant_postcode']; ?></p>
         <!-- Add more customer information fields as needed -->
-
-        <h2>Details:</h2>
         <div class="flex justify-center">
             <table class="w-full max-w-md bg-base-200 shadow-md rounded-lg overflow-hidden">
                 <thead class="bg-gray-50">
