@@ -27,12 +27,12 @@ if (!isset($_SESSION['loggedinMedewerker']) || $_SESSION['loggedinMedewerker'] !
     <h1 class="pt-4 text-4xl font-bold text-center">Admin Dashboard</h1>
     <div class="divider"></div>
     <div class=" gap-4 flex justify-evenly flex-wrap">
-        <a href="/Flower-Power/bestelling-overzicht.php" class="card w-96 bg-gray-800 shadow-xl">
+        <a href="/Flower-Power/bestelling-overzicht.php" class="card w-96 bg-gray-800 shadow-xl hover:scale-95 transition-all">
             <div class="card-body">
                 <h2 class="card-title">Overzicht bestellingen</h2>
             </div>
         </a>
-        <a href="/Flower-Power/product-overview.php" class="card w-96 bg-gray-800 shadow-xl">
+        <a href="/Flower-Power/product-overview.php" class="card w-96 bg-gray-800 shadow-xl hover:scale-95 transition-all">
             <div class="card-body">
                 <h2 class="card-title">Overzicht producten</h2>
             </div>
